@@ -11,7 +11,9 @@ const HighLightContainer = ({ games }) => {
             return (
             <HighlightCard
                 key={game.id}
-                title={game.title}
+                    title={game.title}
+                image={game.thumbnail}
+                    
             />
             )
         })}

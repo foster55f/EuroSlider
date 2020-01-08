@@ -42,6 +42,15 @@
   width: 90%;
   text-align: center;
 }
+.game-img {
+  background-size: cover;
+  height: 50vh;
+  background-repeat: no-repeat;
+  width: 25vw;
+  margin-left: auto;
+  margin-right: auto;
+  background-position: center;
+}
 
 @keyframes App-logo-spin {
   from {
