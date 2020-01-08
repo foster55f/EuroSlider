@@ -1,16 +1,12 @@
+@import '../../variables.scss';
+
 .App {
-  background-color: #bdbdbdad;
-  height: 100vh;
+  text-align: center;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
-
-.game-card {
-  background-color: antiquewhite;
-  margin: 35px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -32,15 +28,6 @@
 
 .App-link {
   color: #61dafb;
-}
-
-.game-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  text-align: center;
 }
 
 @keyframes App-logo-spin {
