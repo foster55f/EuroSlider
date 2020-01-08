@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import HighlightContainer from '../HighlightContainer/HighlightContainer'
 
 class App extends React.Component {
   constructor() {
@@ -14,7 +15,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <></>
+      <>
+        <HighlightContainer />
+      </>
     )
   }
 }
