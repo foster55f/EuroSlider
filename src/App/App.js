@@ -6,6 +6,12 @@ class App extends React.Component {
     super();
   }
 
+  componentDidMount() {
+    fetch('https://www.scorebat.com/video-api/v1/')
+      .then(response => response.json())
+      .then(data => console.log(data))
+  }
+
   render() {
     return (
       <></>
