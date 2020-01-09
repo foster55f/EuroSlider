@@ -4,6 +4,8 @@ import HighlightContainer from '../HighlightContainer/HighlightContainer';
 import { connect } from 'react-redux';
 import { addGames } from '../../actions';
 import Login from '../../Login/Login';
+import SearchForm from '../../SearchForm/SearchForm';
+
 
 
 
@@ -20,10 +22,15 @@ export class App extends React.Component {
       })
   }
 
+  filterSearch() {
+    console.log(this.props)
+  }
+
   render() {
     return (
       <div className="App">
         <Login />
+        <SearchForm search={this.filterSearch} />
         <HighlightContainer />
         </div>
     )
