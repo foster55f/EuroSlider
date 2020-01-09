@@ -13,6 +13,14 @@
   margin: 16px;
 }
 
+button {
+  padding: .5vw;
+  font-size: 1.3vw;
+  background-color: white;
+  border: black;
+  margin-left: 25%;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -20,14 +28,11 @@
 }
 
 .header-background {
-  background-color: #282c34;
-  min-height: 20vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color:black;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 nav {
@@ -39,8 +44,10 @@ nav {
     margin-top: -40px;
 }
 
-h2 {
-  font-size: 4vw
+.header-title {
+  color:white;
+  font-size: 4vw;
+  margin-left: 38%;
 }
 
 .App-link {
