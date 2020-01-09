@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 
 const HighLightContainer = ({ games }) => {
+    console.log(games)
     return (
         <div className= 'game-container'>
             {games.map(game => {

@@ -1,16 +1,24 @@
 import React from 'react';
+import { filterGames } from '../actions';
+import { connect } from 'react-redux';
+
 
 class SearchForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchField:''
+            searchField: '',
+            foundGames: []
         }
     }
 
-    handleSearch = () => {
-        this.props.search(this.state.searchField.toLowerCase())
-        this.setState({searchField:''})
+    handleSearch = (event) => {
+        event.preventDefault()
+        const foundGamesArray = this.props.games.filter(game => {
+            return game.title.toLowerCase().includes(this.state.searchField.toLowerCase())|| game.title.toLowerCase().includes(this.state.searchField.toLowerCase())
+        })
+        this.props.search(foundGamesArray)
+        this.setState({ searchField: '' })
     }
     render() {
         return (
@@ -31,4 +39,12 @@ class SearchForm extends React.Component {
     }
 }
 
-export default SearchForm
+export const mapStateToProps = (state) => ({
+    games: state.games,
+  })
+  
+  export const mapDispatchToProps = dispatch => ({
+    filterGames: games => dispatch( filterGames(games) )
+  })
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(SearchForm)

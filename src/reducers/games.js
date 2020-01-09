@@ -3,7 +3,8 @@ export const games = (state = [], action) => {
         case 'ADD_GAMES':
             return [...state, ...action.games]
         case 'FILTER_GAMES':
-            return [...state, ...action.games]    
+            console.log(action)
+            return [...action.games]    
         default:
             return state
     }

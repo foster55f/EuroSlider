@@ -3,6 +3,7 @@ import './App.css';
 import HighlightContainer from '../HighlightContainer/HighlightContainer';
 import { connect } from 'react-redux';
 import { addGames } from '../../actions';
+import { filterGames } from '../../actions';
 import Login from '../../Login/Login';
 import SearchForm from '../../SearchForm/SearchForm';
 
@@ -22,8 +23,8 @@ export class App extends React.Component {
       })
   }
 
-  filterSearch(search) {
-    
+  filterSearch =(search) => {
+    this.props.filterGames(search)
   }
 
   render() {
@@ -42,7 +43,8 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = dispatch => ({
-  addGames: games => dispatch( addGames(games) )
+  addGames: games => dispatch(addGames(games)),
+  filterGames: games => dispatch( filterGames(games))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
