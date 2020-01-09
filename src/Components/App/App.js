@@ -22,8 +22,8 @@ export class App extends React.Component {
       })
   }
 
-  filterSearch() {
-    console.log(this.props)
+  filterSearch(search) {
+    
   }
 
   render() {

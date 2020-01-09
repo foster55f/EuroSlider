@@ -1,11 +1,16 @@
 import React from 'react';
 
 class SearchForm extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             searchField:''
         }
+    }
+
+    handleSearch = () => {
+        this.props.search(this.state.searchField.toLowerCase())
+        this.setState({searchField:''})
     }
     render() {
         return (
@@ -16,7 +21,7 @@ class SearchForm extends React.Component {
                     type='text'
                     placeholder='Search'
                     name='title'
-                    onChange={event => this.handleChange(event)}
+                    onChange={event => this.setState({ searchField: event.target.value })}
                     value={this.state.searchField}
                 />
                 <button onClick={this.handleSearch} className="searchButton">Search</button>
