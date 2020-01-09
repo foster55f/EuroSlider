@@ -4,16 +4,17 @@ import { connect } from 'react-redux';
 
 
 const HighLightContainer = ({ games }) => {
-    console.log(games)
     return (
         <div className= 'game-container'>
-        {games.map(game => {
+            {games.map(game => {
             return (
-            <HighlightCard
-                key={game.id}
-                    title={game.title}
+                <HighlightCard
+                key={game.competition.id}
+                id={game.competition.id} 
+                title={game.title}
                 image={game.thumbnail}
-                    
+                url={game.url}
+                embed ={game.videos[0].embed}     
             />
             )
         })}

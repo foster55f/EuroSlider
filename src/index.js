@@ -7,12 +7,16 @@ import rootReducer from './reducers';
 import './index.css';
 import App from './Components/App/App';
 import * as serviceWorker from './serviceWorker';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 
 const store = createStore(rootReducer, composeWithDevTools())
 
 ReactDOM.render(
-    <Provider store={store}>
+  <Provider store={store}>
+    <Router>
       <App />
+      </Router>
   </Provider>
     , document.getElementById('root'));
 

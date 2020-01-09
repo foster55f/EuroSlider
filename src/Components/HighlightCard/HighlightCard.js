@@ -1,13 +1,13 @@
 import React from 'react';
 
-const HighlightCard = ({ title, image }) => {
-    console.log(image)
+
+const HighlightCard = ({ title, embed, id }) => {
+    console.log(id)
     return (
         <article className='game-card'>
-            <h2>{title.toUpperCase()}</h2>
-            <div className='game-img' style={{backgroundImage: `url(${image})`}} />
-            {/* <img src= 'https://img.youtube.com/vi/g_jvl9jIaAo/maxresdefault.jpg'/> */}
-
+            <h1>{title.toUpperCase()}</h1>
+            {/* <div dangerouslySetInnerHTML={{__html: `${embed}`}} /> */}
+            {/* <div className='game-img' style={{ backgroundImage: `url(${image})` }} /> */}
       </article>
     )
 }
