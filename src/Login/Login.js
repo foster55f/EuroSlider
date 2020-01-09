@@ -5,27 +5,33 @@ class Login extends React.Component {
         super();
         this.state = {
             username: '',
-            password:'',
-            loggedIn: false
+            password: '',
+            passwordLength:'',
+            loggedIn: false,
+            error:null
         }
     }
 
     login = () => {
-        this.setState({loggedIn:true})
+        // this.setState({ loggedIn: true })
+        if (this.state.username === '' || this.state.passwordLength > 0) {
+            this.setState({ error: 'THE USERNAME OR PASSWORD IS INCORECT' })
+          }
+        localStorage.setItem('key', this.state.username)
     }
+
     render() {
         return (
             <>
             <div className='header-background'>
                 <nav>
                 <h2 className='header-title'>Euro Slider</h2>
-                        <button onClick={this.login}> YourEuroTeam login</button>
-                        {this.state.loggedIn && 
                             <>
-                            <input type="text" placeholder='USERNAME'onChange={(event) => this.setState({username:event.target.value})}/>
-                            <input type="password" placeholder='PASSWORD' onChange={(event) => { this.setState({ password: event.target.value }) }}/>                            
+                            <input type="text" placeholder='USERNAME' onChange={(event) => this.setState({ username: event.target.value })} />
+                            <input type="password" placeholder='PASSWORD' onChange={(event) => { this.setState({ password: event.target.value }); this.setState({ passwordLength: event.target.value.length }); }} />  
+                            {this.state.error}
+                            <button onClick={this.login}> YourEuroTeam login</button> 
                             </>
-                        }
                 </nav>
             </div>
             </>

@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
 import HighlightContainer from '../HighlightContainer/HighlightContainer';
-import Header from '../Header/Header';
 import { connect } from 'react-redux';
 import { addGames } from '../../actions';
 import Login from '../../Login/Login';
 
 
 
-class App extends React.Component {
+export class App extends React.Component {
   constructor() {
     super();
   }
