@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import HighlightContainer from '../HighlightContainer/HighlightContainer';
+import Header from '../Header/Header';
 import { connect } from 'react-redux';
 import { addGames } from '../../actions';
 
@@ -12,7 +13,6 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log('hii')
     fetch('https://www.scorebat.com/video-api/v1/')
       .then(response => response.json())
       .then(data => {
@@ -21,11 +21,11 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.props)
     return (
-      <>
+      <div className="App">
+        <Header />
         <HighlightContainer />
-      </>
+        </div>
     )
   }
 }

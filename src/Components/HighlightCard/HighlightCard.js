@@ -1,8 +1,14 @@
 import React from 'react';
 
-const HighlightCard = ({title}) => {
+
+const HighlightCard = ({ title, embed, id }) => {
+    console.log(id)
     return (
-        <> ID: {title}</>
+        <article className='game-card'>
+            <h1>{title.toUpperCase()}</h1>
+            {/* <div dangerouslySetInnerHTML={{__html: `${embed}`}} /> */}
+            {/* <div className='game-img' style={{ backgroundImage: `url(${image})` }} /> */}
+      </article>
     )
 }
 
