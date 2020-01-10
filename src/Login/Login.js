@@ -6,18 +6,19 @@ class Login extends React.Component {
     constructor() {
         super();
         this.state = {
-            
+            username: '',
+            loggedIn: false,
+            error:null
         }
     }
 
-    login = () => {
-    this.props.history.push(`/yourFavorites`)
+    goToFavorites = () => {
+    this.props.history.push(`/yourfavorites`)
         // this.setState({ loggedIn: true })
-        // if (this.state.username === '' || this.state.passwordLength > 0) {
-        //     this.setState({ error: 'THE USERNAME OR PASSWORD IS INCORECT' })
-        //   }
-        // localStorage.setItem("test1", this.state.username[0])
-        // localStorage.getItem("test1", this.state.username)
+        if (this.state.username === '' || this.state.passwordLength > 0) {
+            this.setState({ error: 'THE USERNAME OR PASSWORD IS INCORECT' })
+          }
+        localStorage.setItem('key', this.state.username)
     }
 
     render() {
@@ -27,7 +28,11 @@ class Login extends React.Component {
                 <nav>
                 <h2 className='header-title'>Euro Slider</h2>
                             <>
-                            <button onClick={this.login}> Euro Vids To Share With Friends!</button> 
+                            <input type="text" placeholder='USERNAME' onChange={(event) => this.setState({ username: event.target.value })} />
+                            {/* <input type="password" placeholder='PASSWORD' onChange={(event) => { this.setState({ password: event.target.value }); this.setState({ passwordLength: event.target.value.length }); }} />  */}
+                            <h1>Hello {this.state.username}</h1>
+                            {this.state.error}
+                            <button onClick={this.goToFavorites}> Your Favorites!</button> 
                             </>
                 </nav>
             </div>
