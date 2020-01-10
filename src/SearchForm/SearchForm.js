@@ -1,7 +1,7 @@
 import React from 'react';
 import { filterGames } from '../actions';
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -20,6 +20,8 @@ class SearchForm extends React.Component {
         this.props.search(foundGamesArray)
         this.setState({ searchField: '' })
     }
+
+   
     render() {
         return (
             <header>
@@ -32,7 +34,8 @@ class SearchForm extends React.Component {
                     onChange={event => this.setState({ searchField: event.target.value })}
                     value={this.state.searchField}
                 />
-                <button onClick={this.handleSearch} className="searchButton">Search</button>
+                    <button onClick={this.handleSearch} className="searchButton">Search</button>
+                    
             </div>
         </header>
         )

@@ -3,7 +3,8 @@ export const addGames = games => ({
     games
 })
 
-export const filterGames = games => ({
+export const filterGames = displayGames => ({
     type: 'FILTER_GAMES',
-    games
+    displayGames
 })
+
