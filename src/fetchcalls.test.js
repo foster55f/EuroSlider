@@ -29,4 +29,12 @@ describe('retrieveGames', () => {
         expect(retrieveGames()).resolves.toEqual(mockResponse);
     })
 
+    it('should return an error message for a response not ok', () => {
+        window.fetch = jest.fn().mockImplementation(() => {
+            return Promise.resolve({
+                ok: false,
+            })
+        })
+        expect(retrieveGames()).rejects.toEqual(Error('Error fetching games'))
+    })
 })
