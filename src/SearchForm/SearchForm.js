@@ -25,11 +25,11 @@ class SearchForm extends React.Component {
     render() {
         return (
             <header>
-            <h1>Search for Highlights</h1>
             <div className='searchContainer'>   
                 <input
+                    className ='search-input'
                     type='text'
-                    placeholder='Search'
+                    placeholder='Search For Highlights'
                     name='title'
                     onChange={event => this.setState({ searchField: event.target.value })}
                     value={this.state.searchField}

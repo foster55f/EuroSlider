@@ -28,7 +28,7 @@ class Login extends React.Component {
                 <nav>
                 <h2 className='header-title'>Euro Slider</h2>
                             <>
-                            <input type="text" placeholder='USERNAME' onChange={(event) => this.setState({ username: event.target.value })} />
+                            <input className = 'userName'type="text" placeholder='USERNAME' onChange={(event) => this.setState({ username: event.target.value })} />
                             {/* <input type="password" placeholder='PASSWORD' onChange={(event) => { this.setState({ password: event.target.value }); this.setState({ passwordLength: event.target.value.length }); }} />  */}
                             <h1>Hello {this.state.username}</h1>
                             {this.state.error}
