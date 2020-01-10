@@ -24,4 +24,9 @@ describe('retrieveGames', () => {
         retrieveGames()
         expect(window.fetch).toHaveBeenCalledWith('https://www.scorebat.com/video-api/v1/');
     })
+
+    it('should return an array of soccer games and highlights', () => {
+        expect(retrieveGames()).resolves.toEqual(mockResponse);
+    })
+
 })
