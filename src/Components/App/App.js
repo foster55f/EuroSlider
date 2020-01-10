@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import HighlightContainer from '../HighlightContainer/HighlightContainer';
 import SearchHighlightContainer from '../SearchHighlightContainer/SearchHighlightContainer';
+import FavoriteContainer from '../FavoriteContainer/FavoriteContainer';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { addGames} from '../../actions';
@@ -61,6 +62,21 @@ export class App extends React.Component {
                 </Link>  
               <SearchForm search={this.filterSearch} />                
               <HighlightContainer />               
+              </>
+            )
+          }}
+        />
+        <Route
+          exact path="/yourfavorites"
+          render={() => {
+            return (
+              <>
+              <Login />  
+                <Link to='/' >
+                  Go Back Home
+                </Link>  
+              <SearchForm search={this.filterSearch} />                
+              <FavoriteContainer />               
               </>
             )
           }}

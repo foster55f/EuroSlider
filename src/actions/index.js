@@ -8,3 +8,8 @@ export const filterGames = displayGames => ({
     displayGames
 })
 
+export const addFavoriteGames = favoriteGames => ({
+    type: 'FAVORITE_GAMES',
+    favoriteGames
+})
+
