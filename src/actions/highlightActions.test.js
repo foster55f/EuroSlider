@@ -16,6 +16,7 @@ describe('actions', () => {
         // Expectation
         expect(result).toEqual(expectedAction);
     });
+
     it(' should have a type of FILTER_GAMES', () => {
         const displayGames = [];
         const expectedAction = {
@@ -24,6 +25,18 @@ describe('actions', () => {
         }
 
         const result = actions.filterGames(displayGames)
+
+        expect(result).toEqual(expectedAction);
+    })
+
+    it('should have a type of FAVORITE_GAMES', () => {
+        const favoriteGames = [];
+        const expectedAction = {
+            type: 'FAVORITE_GAMES',
+            favoriteGames:[]
+        }
+
+        const result = actions.addFavoriteGames(favoriteGames)
 
         expect(result).toEqual(expectedAction);
     })
