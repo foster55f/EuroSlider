@@ -11,6 +11,7 @@ import Login from '../../Login/Login';
 import SearchForm from '../../SearchForm/SearchForm';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import {retrieveGames} from '../../fetchcalls'
 
 
 export class App extends React.Component {
@@ -19,8 +20,7 @@ export class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://www.scorebat.com/video-api/v1/')
-      .then(response => response.json())
+    retrieveGames('https://www.scorebat.com/video-api/v1/')
       .then(data => {
         this.props.addGames(data)
         this.props.filterGames(data)
