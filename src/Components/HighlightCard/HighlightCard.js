@@ -26,7 +26,7 @@ class HighlightCard extends React.Component {
             <article className='game-card'>
                 <h1 className='title-font'>{this.props.title.toUpperCase()}</h1>
                 <div dangerouslySetInnerHTML={{ __html: `${this.props.embed}` }} />  
-                <button className='share-button' id={this.props.title} onClick = {event => this.pickFavoriteVideos(event.target.id)}>Share With Friends</button>
+                <button className='share-button' id={this.props.title} onClick = {event => this.pickFavoriteVideos(event.target.id)}>Save Highlight</button>
             </article>
         )
     }

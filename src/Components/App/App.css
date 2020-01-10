@@ -84,17 +84,30 @@ nav {
   margin:auto;
   margin-top: 5px;
   margin-bottom: 5px;
+  background-color: yellow
 }
 
 .search-input {
   width: 30%;
   height: 30px;
   border-radius: 10px;
-  margin-top:10px
+  margin-top:10px;
+  font-size: 20px;
+  text-align: center;
+  margin-left:10px;
+}
+
+.favorite-button{
+  background-color: yellow;
 }
 
 .userName{
   margin:auto;
+  width: 30%;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center
 }
 
 .searchButton {
