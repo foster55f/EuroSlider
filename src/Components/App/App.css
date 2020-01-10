@@ -9,7 +9,7 @@
 }
 
 .game-card {
-  background-color: antiquewhite;
+  background-color: magenta;
   margin: 16px;
 }
 
@@ -73,6 +73,10 @@ nav {
   margin-left: auto;
   margin-right: auto;
   background-position: center;
+}
+
+.share-button{
+  width: 50%;
 }
 
 @keyframes App-logo-spin {

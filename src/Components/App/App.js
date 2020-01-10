@@ -12,10 +12,6 @@ import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
-
-
-
-
 export class App extends React.Component {
   constructor() {
     super();
@@ -36,10 +32,7 @@ export class App extends React.Component {
   }
 
   goToHomePage = () => {
-    // this.props.history.goBack()
     this.props.history.push(`/`)
-    // window.location.reload(false);
-
 }
 
   render() {
@@ -62,10 +55,9 @@ export class App extends React.Component {
           render={() => {
             return (
               <>
-                <Login />  
+              <Login />  
                 <Link to='/' >
-                Go Back Home
-                  {/* <button onClick = {this.goToHomePage}>GO BACK TO HOME</button> */}
+                  Go Back Home
                 </Link>  
               <SearchForm search={this.filterSearch} />                
               <HighlightContainer />               
@@ -73,10 +65,7 @@ export class App extends React.Component {
             )
           }}
         />
-        {/* <Login />
-        <SearchForm search={this.filterSearch} />
-        <HighlightContainer /> */}
-        </div>
+      </div>
     )
   }
 }
