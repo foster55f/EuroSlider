@@ -16,4 +16,15 @@ describe('actions', () => {
         // Expectation
         expect(result).toEqual(expectedAction);
     });
+    it(' should have a type of FILTER_GAMES', () => {
+        const displayGames = [];
+        const expectedAction = {
+            type: 'FILTER_GAMES',
+            displayGames:[]
+        }
+
+        const result = actions.filterGames(displayGames)
+
+        expect(result).toEqual(expectedAction);
+    })
 })
