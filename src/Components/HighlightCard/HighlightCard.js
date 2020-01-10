@@ -6,9 +6,9 @@ const HighlightCard = ({ title, embed, id }) => {
         <article className='game-card'>
             <h1>{title.toUpperCase()}</h1>
             {/* <div dangerouslySetInnerHTML={{ __html: `${embed}` }} />   */}
-            <button>Favorite</button>
+            <button className = 'share-button' >Share With Friends</button>
             {/* <div className='game-img' style={{ backgroundImage: `url(${image})` }} /> */}
-      </article>
+        </article>
     )
 }
 
