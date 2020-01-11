@@ -28,4 +28,9 @@ export const userLogOut = userLog => ({
     userLog
 })
 
+export const addUserFavoriteGames = userFavoriteGames => ({
+    type: 'USER_FAVORITE_GAMES',
+    userFavoriteGames
+})
+
 

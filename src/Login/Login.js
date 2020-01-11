@@ -23,6 +23,14 @@ class Login extends React.Component {
           }
     }
 
+    goToUserFavorites = () => {
+        this.props.history.push(`/${this.props.user.name}favorites`)
+            // this.setState({ loggedIn: true })
+            if (this.state.username === '' || this.state.passwordLength > 0) {
+                this.setState({ error: 'THE USERNAME OR PASSWORD IS INCORECT' })
+              }
+        }
+
     createUser = () => {
         const name = {
             name: this.state.username,
@@ -50,7 +58,7 @@ class Login extends React.Component {
                             {this.state.error}
                             <button className='create-user-button' onClick={this.createUser}> Click to Creat Your Profile</button> 
                             {this.props.userLog &&
-                                <button className='favorite-button' onClick={this.goToFavorites}> {`Click to View ${this.props.user.name} Favorite Highlights!`}</button>
+                                <button className='favorite-button' onClick={this.goToUserFavorites}> {`Click to View ${this.props.user.name} Favorite Highlights!`}</button>
                             }
                             {!this.props.userLog &&
                                 <button className='favorite-button' onClick={this.goToFavorites}> Click to View Your Favorite Highlights!</button>

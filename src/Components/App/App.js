@@ -4,6 +4,7 @@ import HighlightContainer from '../HighlightContainer/HighlightContainer';
 import SearchHighlightContainer from '../SearchHighlightContainer/SearchHighlightContainer';
 import UserContainer from '../UserContainer/UserContainer';
 import FavoriteContainer from '../FavoriteContainer/FavoriteContainer';
+import UserFavoriteContainer from '../UserFavoriteContainer/UserFavoriteContainer';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { addGames } from '../../actions';
@@ -71,7 +72,19 @@ export class App extends React.Component {
           }}
         />
         <Route
-          exact path="/foster"
+        exact path={`/${this.props.user.name}favorites`}
+        render={() => {
+          return (
+            <>
+            <Login />  
+              <UserContainer /> 
+              <UserFavoriteContainer />               
+            </>
+          )
+        }}
+      />
+        <Route
+          exact path={`/${this.props.user.name}`}
           render={() => {
             return (
               <>
@@ -104,8 +117,10 @@ export class App extends React.Component {
 }
 
 export const mapStateToProps = (state) => ({
+  user: state.user,
   games: state.games,
-  displayGames: state.displayGames
+  displayGames: state.displayGames,
+
 })
 
 export const mapDispatchToProps = dispatch => ({
