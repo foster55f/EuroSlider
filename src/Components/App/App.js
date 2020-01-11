@@ -5,7 +5,8 @@ import SearchHighlightContainer from '../SearchHighlightContainer/SearchHighligh
 import FavoriteContainer from '../FavoriteContainer/FavoriteContainer';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { addGames} from '../../actions';
+import { addGames } from '../../actions';
+import { addUser} from '../../actions';
 import { filterGames } from '../../actions';
 import Login from '../../Login/Login';
 import SearchForm from '../../SearchForm/SearchForm';
@@ -93,7 +94,8 @@ export const mapStateToProps = (state) => ({
 
 export const mapDispatchToProps = dispatch => ({
   addGames: games => dispatch(addGames(games)),
-  filterGames: displayGames => dispatch(filterGames(displayGames))
+  filterGames: displayGames => dispatch(filterGames(displayGames)),
+  addUser: user => dispatch(addUser(user))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App))

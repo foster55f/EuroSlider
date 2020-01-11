@@ -1,10 +1,13 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { addUser} from '../actions';
+
 
 
 class Login extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             username: '',
             loggedIn: false,
@@ -21,6 +24,13 @@ class Login extends React.Component {
         localStorage.setItem(this.state.username, 'key1')
     }
 
+    createUser = () => {
+        const user = {
+            name: this.state.username,
+        }
+        this.props.addUser(user)
+    }
+
     render() {
         return (
             <>
@@ -33,7 +43,7 @@ class Login extends React.Component {
                             {/* <input type="password" placeholder='PASSWORD' onChange={(event) => { this.setState({ password: event.target.value }); this.setState({ passwordLength: event.target.value.length }); }} />  */}
                             {/* <h1>Hello {this.state.username}</h1> */}
                             {this.state.error}
-                            <button className = 'favorite-button'onClick={this.goToFavorites}> Click to Creat Your Profile</button> 
+                            <button className = 'create-user-button'onClick={this.createUser}> Click to Creat Your Profile</button> 
                             <button className = 'favorite-button'onClick={this.goToFavorites}> Click to View Your Favorite Highlights!</button> 
                             </>
                 </nav>
@@ -43,4 +53,12 @@ class Login extends React.Component {
     }
 }
 
-export default withRouter(Login)
+export const mapStateToProps = state => ({
+    user: state.user
+})
+
+export const mapDispatchToProps = (dispatch) => ({
+    addUser: user => dispatch(addUser(user))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login))
