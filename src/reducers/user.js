@@ -1,9 +1,8 @@
-export const user = (state = [], action) => {
-    console.log(action)
+export const user = (state = {}, action) => {
+    console.log(state)
     switch (action.type) {
         case "ADD_USER":
-            console.log(action.user)
-            return [...state, action.user]
+            return { ...action.user }
         default:
             return state
     }

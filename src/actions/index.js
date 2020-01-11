@@ -18,3 +18,14 @@ export const addUser = user => ({
     user
 })
 
+export const userLogIn = userLog => ({
+    type: 'LOGIN',
+    userLog
+})
+
+export const userLogOut = userLog => ({
+    type: 'LOGOUT',
+    userLog
+})
+
+
