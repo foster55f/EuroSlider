@@ -77,7 +77,7 @@ export class App extends React.Component {
               <>
               <Login />  
                 <UserContainer /> 
-                <HighlightContainer />                
+              <SearchHighlightContainer />
               </>
             )
           }}
