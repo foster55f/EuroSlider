@@ -110,6 +110,15 @@ nav {
   text-align: center
 }
 
+.password{
+    margin:auto;
+    width: 30%;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center
+}
+
 .searchButton {
   width: 20%;
   height: 30px;
