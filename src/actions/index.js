@@ -13,3 +13,8 @@ export const addFavoriteGames = favoriteGames => ({
     favoriteGames
 })
 
+export const addUser = user => ({
+    type: 'ADD_USER',
+    user
+})
+
