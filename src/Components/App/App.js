@@ -50,8 +50,8 @@ export class App extends React.Component {
             return (
               <>
               <Login />
-              <SearchForm search={this.filterSearch} />
-              <SearchHighlightContainer />
+                <SearchForm search={this.filterSearch} />
+              <HighlightContainer />                
               </>
             )
           }}
@@ -65,8 +65,9 @@ export class App extends React.Component {
                 <Link to='/' >
                   Go Back Home
                 </Link>  
-              <SearchForm search={this.filterSearch} />                
-              <HighlightContainer />               
+                <SearchForm search={this.filterSearch} />                 
+                <SearchHighlightContainer />
+                
               </>
             )
           }}
@@ -90,7 +91,7 @@ export class App extends React.Component {
               <>
               <Login />  
                 <UserContainer /> 
-              <SearchHighlightContainer />
+              <HighlightContainer />               
               </>
             )
           }}

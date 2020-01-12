@@ -7,7 +7,7 @@ import { games } from '../../reducers/games';
 const SearchHighlightContainer = ({ games, displayGames }) => {
     return (
         <div className= 'game-container'>
-            {games.map(game => {
+            {displayGames.map(game => {
             return (
                 <HighlightCard
                 key={game.competition.id}
