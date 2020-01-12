@@ -18,7 +18,6 @@ import { retrieveGames } from '../../fetchcalls';
 
 
 
-
 export class App extends React.Component {
   constructor() {
     super();
