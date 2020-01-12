@@ -8,14 +8,15 @@ const UserFavoriteContainer = ({ games, displayGames, favoriteGames, userFavorit
         <div className= 'game-container'>
             {userFavoriteGames.map(game => {
             return (
+                
                 <HighlightCard
                 key={game.competition.id}
                 id={game.competition.id} 
                 title={game.title}
                 image={game.thumbnail}
                 url={game.url}
-                embed ={game.videos[0].embed}     
-            />
+                embed={game.videos[0].embed}
+                />
             )
         })}
         </div>

@@ -59,5 +59,5 @@ describe('mapDispatchToProps', () => {
 
             expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
-});  
+  });  
 })

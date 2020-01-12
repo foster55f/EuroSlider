@@ -1,11 +1,11 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addUser, userLogIn} from '../actions';
+import { addUser, userLogIn} from '../../actions';
 
 
 
-class Login extends React.Component {
+export class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -24,7 +24,7 @@ class Login extends React.Component {
     }
 
     goToUserFavorites = () => {
-        this.props.history.push(`/${this.props.user.name}favorites`)
+        this.props.history.push("user/favorites")
             // this.setState({ loggedIn: true })
             if (this.state.username === '' || this.state.passwordLength > 0) {
                 this.setState({ error: 'THE USERNAME OR PASSWORD IS INCORECT' })
@@ -39,7 +39,7 @@ class Login extends React.Component {
         this.props.addUser(name)
         this.props.userLogIn()
         localStorage.setItem(this.state.username, 'key1')
-        this.props.history.push(`/${this.state.username}`)
+        this.props.history.push("/user")
         this.setState({ loggedIn: true })
         let password = localStorage.getItem(this.state.username)
     }

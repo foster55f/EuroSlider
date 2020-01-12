@@ -10,7 +10,7 @@ import { withRouter } from 'react-router-dom';
 import { addGames } from '../../actions';
 import { addUser} from '../../actions';
 import { filterGames } from '../../actions';
-import Login from '../../Login/Login';
+import Login from '../Login/Login';
 import SearchForm from '../../SearchForm/SearchForm';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -72,7 +72,7 @@ export class App extends React.Component {
           }}
         />
         <Route
-        exact path={`/${this.props.user.name}favorites`}
+        exact path="/user/favorites"
         render={() => {
           return (
             <>
@@ -84,7 +84,7 @@ export class App extends React.Component {
         }}
       />
         <Route
-          exact path={`/${this.props.user.name}`}
+          exact path="/user"
           render={() => {
             return (
               <>
