@@ -21,7 +21,7 @@ export class SearchForm extends React.Component {
         this.setState({ searchField: '' })
     }
 
-   
+    
     render() {
         return (
             <header>

@@ -1,7 +1,6 @@
 import React from 'react'
 import HighlightCard from '../HighlightCard/HighlightCard';
 import { connect } from 'react-redux';
-import { games } from '../../reducers/games';
 
 
 const SearchHighlightContainer = ({ displayGames }) => {
@@ -24,6 +23,7 @@ const SearchHighlightContainer = ({ displayGames }) => {
 }
 export const mapStateToProps = state => ({
     displayGames: state.displayGames
-  })
-  
-  export default connect(mapStateToProps)(SearchHighlightContainer)
+})
+
+
+export default connect(mapStateToProps)(SearchHighlightContainer)
