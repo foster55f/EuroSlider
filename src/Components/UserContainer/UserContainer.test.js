@@ -1,14 +1,14 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { Login, mapStateToProps, mapDispatchToProps } from './Login';
-import { addUser } from '../../actions';
+import { UserContainer, mapStateToProps, mapDispatchToProps } from './UserContainer';
+import { addUser, userLogOut } from '../../actions';
 
 
-describe('Login', () => {
+describe('UserContainer', () => {
   let wrapper;
 
   it('should match the App snapshot', () => {
-    let wrapper = shallow(<Login />);
+    let wrapper = shallow(<UserContainer />);
     expect(wrapper).toMatchSnapshot();
   })
 
@@ -33,10 +33,10 @@ describe('mapDispatchToProps', () => {
     it('calls dispatch with an addMovies action when addMovies is called',
         () => {
             const mockDispatch = jest.fn();
-            const actionToDispatch = addUser({ sample: 'user' });
+            const actionToDispatch = userLogOut(false);
             const mappedProps = mapDispatchToProps(mockDispatch);
 
-            mappedProps.addUser({ sample: 'user' });
+            mappedProps.userLogOut(false);
 
             expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
     });
