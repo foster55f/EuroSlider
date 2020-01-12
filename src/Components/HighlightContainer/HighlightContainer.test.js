@@ -7,7 +7,7 @@ describe('HighlightContainer', () => {
 
   beforeEach(() => {
     wrapper = shallow(<HighLightContainer
-        displayGames={[
+        games={[
           
       ]}
     />)

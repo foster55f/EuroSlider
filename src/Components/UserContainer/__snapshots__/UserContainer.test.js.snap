@@ -1,3 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UserContainer should match the App snapshot 1`] = `ShallowWrapper {}`;
+exports[`UserContainer should match the App snapshot 1`] = `
+<Fragment>
+  <h1>
+    Welcome 
+  </h1>
+  <button
+    onClick={[Function]}
+  >
+    Log Out
+  </button>
+</Fragment>
+`;

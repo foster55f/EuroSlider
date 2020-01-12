@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HighlightContainer should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`HighlightContainer should match the snapshot 1`] = `
+<div
+  className="game-container"
+/>
+`;

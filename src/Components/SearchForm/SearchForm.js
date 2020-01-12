@@ -1,9 +1,9 @@
 import React from 'react';
-import { filterGames } from '../actions';
+import { filterGames } from '../../actions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-class SearchForm extends React.Component {
+export class SearchForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -46,8 +46,8 @@ export const mapStateToProps = (state) => ({
     games: state.games,
   })
   
-  export const mapDispatchToProps = dispatch => ({
-    filterGames: games => dispatch( filterGames(games) )
-  })
+//   export const mapDispatchToProps = dispatch => ({
+//     filterGames: games => dispatch( filterGames(games) )
+//   })
   
-  export default connect(mapStateToProps, mapDispatchToProps)(SearchForm)
+  export default connect(mapStateToProps)(SearchForm)

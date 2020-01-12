@@ -1,3 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HighlightCard should match the App snapshot 1`] = `ShallowWrapper {}`;
+exports[`HighlightCard should match the App snapshot 1`] = `
+<article
+  className="game-card"
+>
+  <h1
+    className="title-font"
+  />
+  <div
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "undefined",
+      }
+    }
+  />
+  <button
+    className="share-button"
+    onClick={[Function]}
+  >
+    Add Favorite
+  </button>
+  <button
+    className="remove-button"
+    onClick={[Function]}
+  >
+    Remove 
+  </button>
+</article>
+`;

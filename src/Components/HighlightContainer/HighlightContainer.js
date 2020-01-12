@@ -1,10 +1,9 @@
 import React from 'react'
 import HighlightCard from '../HighlightCard/HighlightCard';
 import { connect } from 'react-redux';
-import { displayGames } from '../../reducers/displayGames';
 
 
-export const HighLightContainer = ({ games, displayGames }) => {
+export const HighLightContainer = ({ games }) => {
     return (
         <div className= 'game-container'>
             {games.map(game => {
@@ -27,4 +26,4 @@ export const mapStateToProps = state => ({
     displayGames: state.displayGames
   })
   
-  export default connect(mapStateToProps)(HighLightContainer)
+export default connect(mapStateToProps)(HighLightContainer)
