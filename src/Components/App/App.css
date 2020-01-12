@@ -23,6 +23,11 @@ button {
   border-radius: 5px;
 }
 
+.create-user-button {
+  height: 58px;
+  width: 30%;
+}
+
 .title-font {
   font-size: 20px;
 }
@@ -80,8 +85,17 @@ nav {
 }
 
 .share-button{
-  width: 50%;
+  width: 40%;
+  height:30px;
   margin:auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: yellow
+}
+
+.remove-button{
+  width: 40%;
+  height:30px;
   margin-top: 5px;
   margin-bottom: 5px;
   background-color: yellow
@@ -126,6 +140,10 @@ nav {
   text-align: center;
   padding:0px;
   background-color:yellow
+}
+
+.user-entry {
+  display: flex;
 }
 
 @keyframes App-logo-spin {

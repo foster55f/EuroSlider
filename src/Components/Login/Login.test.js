@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { Login, mapStateToProps, mapDispatchToProps } from './Login';
-import { addUser } from '../../actions';
+import { addUser, userLogIn } from '../../actions';
 
 
 describe('Login', () => {
@@ -30,7 +30,7 @@ describe('Login', () => {
 });
 
 describe('mapDispatchToProps', () => {
-    it('calls dispatch with an addMovies action when addMovies is called',
+    it('calls dispatch with an addUser action when addUser is called',
         () => {
             const mockDispatch = jest.fn();
             const actionToDispatch = addUser({ sample: 'user' });
@@ -39,6 +39,17 @@ describe('mapDispatchToProps', () => {
             mappedProps.addUser({ sample: 'user' });
 
             expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
-    });
+      });
+  
+      it('calls dispatch with an userLogin action when userLogin is called',
+      () => {
+          const mockDispatch = jest.fn();
+          const actionToDispatch = userLogIn(true);
+          const mappedProps = mapDispatchToProps(mockDispatch);
+
+          mappedProps.userLogIn(true);
+
+          expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
   });  
 })

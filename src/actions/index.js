@@ -3,6 +3,11 @@ export const addGames = games => ({
     games
 })
 
+export const removeGames = favoriteGames => ({
+    type: 'REMOVE_GAMES',
+    favoriteGames
+})
+
 export const filterGames = displayGames => ({
     type: 'FILTER_GAMES',
     displayGames
@@ -30,6 +35,11 @@ export const userLogOut = userLog => ({
 
 export const addUserFavoriteGames = userFavoriteGames => ({
     type: 'USER_FAVORITE_GAMES',
+    userFavoriteGames
+})
+
+export const removeUserGames = userFavoriteGames => ({
+    type: 'REMOVE_USER_GAMES',
     userFavoriteGames
 })
 

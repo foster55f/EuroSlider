@@ -14,7 +14,7 @@ describe('UserContainer', () => {
 
 
   describe('mapsStateToProps', () => {
-    it('should return only movies and loading properties from the store', () => {
+    it('should return only user info and login info from the store', () => {
         const mockState = {
             user: {},
             userLog: false,
@@ -30,7 +30,7 @@ describe('UserContainer', () => {
 });
 
 describe('mapDispatchToProps', () => {
-    it('calls dispatch with an addMovies action when addMovies is called',
+    it('calls dispatch with an userLogOut action when userLogOut is called',
         () => {
             const mockDispatch = jest.fn();
             const actionToDispatch = userLogOut(false);

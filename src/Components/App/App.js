@@ -67,7 +67,6 @@ export class App extends React.Component {
                 </Link>  
                 <SearchForm search={this.filterSearch} />                 
                 <SearchHighlightContainer />
-                
               </>
             )
           }}

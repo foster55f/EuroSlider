@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { games } from '../../reducers/games';
 
 
-const SearchHighlightContainer = ({ games, displayGames }) => {
+const SearchHighlightContainer = ({ displayGames }) => {
     return (
         <div className= 'game-container'>
             {displayGames.map(game => {
@@ -23,7 +23,6 @@ const SearchHighlightContainer = ({ games, displayGames }) => {
     )
 }
 export const mapStateToProps = state => ({
-    games: state.games,
     displayGames: state.displayGames
   })
   

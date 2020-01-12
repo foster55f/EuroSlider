@@ -50,13 +50,15 @@ export class Login extends React.Component {
             <div className='header-background'>
                 <nav>
                 <h2 className='header-title'>Euro Slider</h2>
-                            <>
+                        <>
+                            <div className = 'user-entry'>
                             <input className='userName' type="text" placeholder='ENTER NAME' onChange={(event) => this.setState({ username: event.target.value })} />
                             <input className = 'password'type="text" placeholder='password' onChange={(event) => this.setState({ password: event.target.value })} />
                             {/* <input type="password" placeholder='PASSWORD' onChange={(event) => { this.setState({ password: event.target.value }); this.setState({ passwordLength: event.target.value.length }); }} />  */}
                             {/* <h1>Hello {this.state.username}</h1> */}
                             {this.state.error}
-                            <button className='create-user-button' onClick={this.createUser}> Click to Creat Your Profile</button> 
+                                <button className='create-user-button' onClick={this.createUser}> Click to Create Your Profile</button> 
+                            </div>
                             {this.props.userLog &&
                                 <button className='favorite-button' onClick={this.goToUserFavorites}> {`Click to View ${this.props.user.name} Favorite Highlights!`}</button>
                             }
