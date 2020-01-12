@@ -3,7 +3,7 @@ import HighlightCard from '../HighlightCard/HighlightCard';
 import { connect } from 'react-redux';
 
 
-const UserFavoriteContainer = ({ games, displayGames, favoriteGames, userFavoriteGames }) => {
+export const UserFavoriteContainer = ({ games, displayGames, favoriteGames, userFavoriteGames }) => {
     return (
         <div className= 'game-container'>
             {userFavoriteGames.map(game => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { UserContainer, mapStateToProps, mapDispatchToProps } from './UserContainer';
-import { addUser, userLogOut } from '../../actions';
+import { userLogOut } from '../../actions';
 
 
 describe('UserContainer', () => {
