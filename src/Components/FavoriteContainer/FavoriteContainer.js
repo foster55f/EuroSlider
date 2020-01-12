@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { favoriteGames } from '../../reducers/favoriteGames';
 
 
-const FavoriteContainer = ({ games, displayGames, favoriteGames }) => {
+export const FavoriteContainer = ({ games, displayGames, favoriteGames }) => {
     return (
         <div className= 'game-container'>
             {favoriteGames.map(game => {
