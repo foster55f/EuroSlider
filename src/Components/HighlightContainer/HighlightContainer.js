@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { displayGames } from '../../reducers/displayGames';
 
 
-const HighLightContainer = ({ games, displayGames }) => {
+export const HighLightContainer = ({ games, displayGames }) => {
     return (
         <div className= 'game-container'>
             {displayGames.map(game => {
