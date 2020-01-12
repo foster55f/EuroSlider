@@ -33,7 +33,7 @@ describe('App', () => {
   });
 
   describe('mapsStateToProps', () => {
-    it('should return only movies and loading properties from the store', () => {
+    it('should return only games from the store', () => {
         const mockState = {
             games: [],
             displayGames: [],
@@ -49,7 +49,7 @@ describe('App', () => {
 });
 
 describe('mapDispatchToProps', () => {
-    it('calls dispatch with an addMovies action when addMovies is called',
+    it('calls dispatch with an addGames action when addGames is called',
         () => {
             const mockDispatch = jest.fn();
             const actionToDispatch = addGames([{ sample: 'game' }]);

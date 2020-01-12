@@ -6,7 +6,7 @@ import { removeGames } from '../../actions';
 import { removeUserGames } from '../../actions';
 
 
-class HighlightCard extends React.Component {
+export class HighlightCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -45,7 +45,7 @@ class HighlightCard extends React.Component {
     render() {
         return (
             <article className='game-card'>
-                <h1 className='title-font'>{this.props.title.toUpperCase()}</h1>
+                <h1 className='title-font'>{this.props.title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: `${this.props.embed}` }} />  
                 {this.props.userLog &&
                     <button className='share-button' id={this.props.title} onClick={event => this.userPickFavoriteVideos(event.target.id)}>{`Add to ${this.props.user.name}`}</button>

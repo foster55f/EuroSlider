@@ -14,7 +14,7 @@ describe('Login', () => {
 
 
   describe('mapsStateToProps', () => {
-    it('should return only movies and loading properties from the store', () => {
+    it('should return only userinfo and user properties from the store', () => {
         const mockState = {
             user: {},
             userLog: false,
@@ -50,6 +50,6 @@ describe('mapDispatchToProps', () => {
           mappedProps.userLogIn(true);
 
           expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
-  });
+    });
   });  
 })

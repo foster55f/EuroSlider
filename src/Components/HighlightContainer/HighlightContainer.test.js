@@ -19,7 +19,7 @@ describe('HighlightContainer', () => {
 })
 
   describe('mapsStateToProps', () => {
-    it('should return only movies and loading properties from the store', () => {
+    it('should return only game highlights from the store', () => {
         const mockState = {
             games: [],
             displayGames: [],
