@@ -51,7 +51,7 @@ export class Login extends React.Component {
                         <>
                             <div className = 'user-entry'>
                             <input className='userName' type="text" placeholder='ENTER NAME' onChange={(event) => this.setState({ username: event.target.value })} />
-                            <input className = 'password'type="text" placeholder='password' onChange={(event) => this.setState({ password: event.target.value })} />
+                            {/* <input className = 'password'type="text" placeholder='password' onChange={(event) => this.setState({ password: event.target.value })} /> */}
                             {/* <input type="password" placeholder='PASSWORD' onChange={(event) => { this.setState({ password: event.target.value }); this.setState({ passwordLength: event.target.value.length }); }} />  */}
                             {/* <h1>Hello {this.state.username}</h1> */}
                             {this.state.error}
