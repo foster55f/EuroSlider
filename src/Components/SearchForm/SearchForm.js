@@ -1,9 +1,9 @@
 import React from 'react';
-import { filterGames } from '../actions';
+import { filterGames } from '../../actions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-class SearchForm extends React.Component {
+export class SearchForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -25,11 +25,11 @@ class SearchForm extends React.Component {
     render() {
         return (
             <header>
-            <h1>Search for Highlights</h1>
             <div className='searchContainer'>   
                 <input
+                    className ='search-input'
                     type='text'
-                    placeholder='Search'
+                    placeholder='Search For Highlights'
                     name='title'
                     onChange={event => this.setState({ searchField: event.target.value })}
                     value={this.state.searchField}
@@ -46,8 +46,8 @@ export const mapStateToProps = (state) => ({
     games: state.games,
   })
   
-  export const mapDispatchToProps = dispatch => ({
-    filterGames: games => dispatch( filterGames(games) )
-  })
+//   export const mapDispatchToProps = dispatch => ({
+//     filterGames: games => dispatch( filterGames(games) )
+//   })
   
-  export default connect(mapStateToProps, mapDispatchToProps)(SearchForm)
+  export default connect(mapStateToProps)(SearchForm)

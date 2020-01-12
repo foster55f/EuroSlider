@@ -23,6 +23,11 @@ button {
   border-radius: 5px;
 }
 
+.create-user-button {
+  height: 58px;
+  width: 30%;
+}
+
 .title-font {
   font-size: 20px;
 }
@@ -54,7 +59,7 @@ nav {
 .header-title {
   color:white;
   font-size: 4vw;
-  margin-left: 15%;
+  margin-left: 2%;
 }
 
 .App-link {
@@ -80,10 +85,69 @@ nav {
 }
 
 .share-button{
-  width: 50%;
+  width: 40%;
+  height:30px;
   margin:auto;
   margin-top: 5px;
   margin-bottom: 5px;
+  background-color: yellow;
+  padding: .5vw;
+  font-size: 1.3vw;
+}
+
+.remove-button{
+  width: 40%;
+  height:30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: yellow;
+  padding: .5vw;
+  font-size: 1.3vw;
+}
+
+.search-input {
+  width: 30%;
+  height: 30px;
+  border-radius: 10px;
+  margin-top:10px;
+  font-size: 20px;
+  text-align: center;
+  margin-left:10px;
+}
+
+.favorite-button{
+  background-color: yellow;
+}
+
+.userName{
+  margin:auto;
+  width: 30%;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center
+}
+
+.password{
+    margin:auto;
+    width: 30%;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center
+}
+
+.searchButton {
+  width: 20%;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  padding:0px;
+  background-color:yellow
+}
+
+.user-entry {
+  display: flex;
 }
 
 @keyframes App-logo-spin {
