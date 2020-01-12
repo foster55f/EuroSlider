@@ -1,4 +1,4 @@
-import { loggedIn, userLog } from '../reducers/loggedIn';
+import { userLog } from '../reducers/loggedIn';
 
 describe('loggedIn', () => {
   it('should return the initial state', () => {
