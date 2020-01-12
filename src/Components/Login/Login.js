@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { addUser, userLogIn} from '../../actions';
 
 
-
 export class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -17,10 +16,9 @@ export class Login extends React.Component {
 
     goToFavorites = () => {
     this.props.history.push(`/yourfavorites`)
-        // this.setState({ loggedIn: true })
         if (this.state.username === '' || this.state.passwordLength > 0) {
             this.setState({ error: 'THE USERNAME OR PASSWORD IS INCORECT' })
-          }
+        }
     }
 
     goToUserFavorites = () => {
@@ -28,8 +26,8 @@ export class Login extends React.Component {
             // this.setState({ loggedIn: true })
             if (this.state.username === '' || this.state.passwordLength > 0) {
                 this.setState({ error: 'THE USERNAME OR PASSWORD IS INCORECT' })
-              }
         }
+    }   
 
     createUser = () => {
         const name = {

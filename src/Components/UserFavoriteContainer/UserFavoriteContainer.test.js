@@ -8,14 +8,14 @@ describe('UserFavoriteContainer', () => {
     
     it('should match the snapshot with all data passed in correctly', () => {
         
-        const wrapper = shallow(<UserFavoriteContainer
+    wrapper = shallow(<UserFavoriteContainer
             userFavoriteGames={[]}
         />);
     
         expect(wrapper).toMatchSnapshot();
-      });
+    });
 
-  describe('mapsStateToProps', () => {
+describe('mapsStateToProps', () => {
     it('should return only movies and loading properties from the store', () => {
         const mockState = {
             games: [],
@@ -34,5 +34,4 @@ describe('UserFavoriteContainer', () => {
         expect(mappedProps).toEqual(expected);
         });
     });
- 
 })

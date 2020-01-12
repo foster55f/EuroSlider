@@ -5,8 +5,6 @@ import { userLogOut} from '../../actions';
 
 
 
-
-
 export class UserContainer extends React.Component {
     constructor() {
         super();

@@ -9,9 +9,6 @@ import { removeUserGames } from '../../actions';
 export class HighlightCard extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-
-        }
     }
 
     pickFavoriteVideos = (id) => {
@@ -49,18 +46,16 @@ export class HighlightCard extends React.Component {
                 <div dangerouslySetInnerHTML={{ __html: `${this.props.embed}` }} />  
                 {this.props.userLog &&
                     <button className='share-button' id={this.props.title} onClick={event => this.userPickFavoriteVideos(event.target.id)}>{`Add to ${this.props.user.name}`}</button>
-                            }
+                }
                 {!this.props.userLog &&
                     <button className='share-button' id={this.props.title} onClick = {event => this.pickFavoriteVideos(event.target.id)}>Add Favorite</button>                    
                 } 
-                 {this.props.userLog &&
+                {this.props.userLog &&
                     <button className='remove-button' id={this.props.title} onClick = {event => this.removeUserFavoriteVideos(event.target.id)}>Remove Your Favorite </button>
-                            }
+                }
                 {!this.props.userLog &&
                     <button className='remove-button' id={this.props.title} onClick = {event => this.removeFavoriteVideos(event.target.id)}>Remove </button>
-                } 
-                
-                            
+                }              
             </article>
         )
     }

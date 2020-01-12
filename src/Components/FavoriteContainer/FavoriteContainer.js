@@ -1,7 +1,6 @@
 import React from 'react'
 import HighlightCard from '../HighlightCard/HighlightCard';
 import { connect } from 'react-redux';
-import { favoriteGames } from '../../reducers/favoriteGames';
 
 
 export const FavoriteContainer = ({ favoriteGames }) => {
