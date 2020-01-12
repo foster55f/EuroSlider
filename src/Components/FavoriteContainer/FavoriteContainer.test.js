@@ -8,7 +8,6 @@ describe('FavoriteContainer', () => {
   beforeEach(() => {
     wrapper = shallow(<FavoriteContainer
         favoriteGames={[
-          
       ]}
     />)
   })
@@ -21,13 +20,9 @@ describe('FavoriteContainer', () => {
   describe('mapsStateToProps', () => {
     it('should return only games and favorite games from the store', () => {
         const mockState = {
-            games: [],
-            displayGames: [],
             favoriteGames: [],
         };
         const expected = {
-            games: [],
-            displayGames: [],
             favoriteGames: [],
         };
         const mappedProps = mapStateToProps(mockState);

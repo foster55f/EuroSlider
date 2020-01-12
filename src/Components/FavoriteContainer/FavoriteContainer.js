@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { favoriteGames } from '../../reducers/favoriteGames';
 
 
-export const FavoriteContainer = ({ games, displayGames, favoriteGames }) => {
+export const FavoriteContainer = ({ favoriteGames }) => {
     return (
         <div className= 'game-container'>
             {favoriteGames.map(game => {
@@ -23,8 +23,6 @@ export const FavoriteContainer = ({ games, displayGames, favoriteGames }) => {
     )
 }
 export const mapStateToProps = state => ({
-    games: state.games,
-    displayGames: state.displayGames,
     favoriteGames: state.favoriteGames
   })
   
