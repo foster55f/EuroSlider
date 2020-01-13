@@ -4,6 +4,8 @@ import { addFavoriteGames} from '../../actions';
 import { addUserFavoriteGames } from '../../actions';
 import { removeGames } from '../../actions';
 import { removeUserGames } from '../../actions';
+import PropTypes from 'prop-types';
+
 
 
 export class HighlightCard extends React.Component {
@@ -76,3 +78,11 @@ export const mapDispatchToProps = dispatch => ({
   })
 
 export default connect(mapStateToProps, mapDispatchToProps)(HighlightCard)
+
+HighlightCard.propTypes = {
+    user: PropTypes.object.isRequired,
+    addFavoriteGames: PropTypes.func,
+    addUserFavoriteGames: PropTypes.func,
+    removeGames: PropTypes.func,
+    removeUserGames: PropTypes.func
+}

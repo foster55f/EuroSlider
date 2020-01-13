@@ -12,6 +12,29 @@ describe('HighlightCard', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
+    it('should run goToFavorites when the button is clicked', () => {
+        let mockEvent = { target: { id: 'foster' } }
+        wrapper.instance().userPickFavoriteVideos = jest.fn();
+        wrapper.instance().userPickFavoriteVideos();
+        wrapper.instance().forceUpdate();
+        
+  
+    wrapper.find('.share-button').simulate('click', mockEvent);
+  
+    expect(wrapper.instance().userPickFavoriteVideos).toHaveBeenCalled();
+  });
+
+    it('should run removeFavoriteVideos when the button is clicked', () => {
+        let mockEvent = { target: { id: 'foster' } }
+        wrapper.instance().removeFavoriteVideos = jest.fn();
+        wrapper.instance().removeFavoriteVideos();
+        wrapper.instance().forceUpdate();
+  
+    wrapper.find('.remove-button').simulate('click', mockEvent);
+  
+    expect(wrapper.instance().removeFavoriteVideos).toHaveBeenCalled();
+  });
+
 
   describe('mapsStateToProps', () => {
     it('should return user info and games from the store', () => {

@@ -22,7 +22,7 @@ export class UserContainer extends React.Component {
     render() {
         return (
             <>
-                <h1>Welcome </h1>
+                <h1>{`Welcome ${this.props.user.name}`}</h1>
                 <button onClick ={this.logOut}>Log Out</button>
             </>
         )
