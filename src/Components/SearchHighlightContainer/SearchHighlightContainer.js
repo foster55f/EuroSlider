@@ -3,7 +3,7 @@ import HighlightCard from '../HighlightCard/HighlightCard';
 import { connect } from 'react-redux';
 
 
-const SearchHighlightContainer = ({ displayGames }) => {
+export const SearchHighlightContainer = ({ displayGames }) => {
     return (
         <div className= 'game-container'>
             {displayGames.map(game => {

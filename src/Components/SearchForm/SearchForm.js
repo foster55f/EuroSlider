@@ -2,6 +2,7 @@ import React from 'react';
 import { filterGames } from '../../actions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export class SearchForm extends React.Component {
     constructor(props) {
@@ -50,4 +51,8 @@ export const mapStateToProps = (state) => ({
 //     filterGames: games => dispatch( filterGames(games) )
 //   })
   
-  export default connect(mapStateToProps)(SearchForm)
+export default connect(mapStateToProps)(SearchForm)
+  
+SearchForm.propTypes = {
+    games: PropTypes.object,
+}

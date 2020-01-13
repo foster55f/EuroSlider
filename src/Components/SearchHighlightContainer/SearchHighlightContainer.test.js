@@ -1,14 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { HighLightContainer, mapStateToProps } from './HighlightContainer';
+import { SearchHighlightContainer, mapStateToProps } from './SearchHighlightContainer';
 
-describe('HighlightContainer', () => {
+describe('SearchHighlightContainer', () => {
   let wrapper;
 
-  beforeEach(() => {
-    wrapper = shallow(<HighLightContainer
-        games={[{ team: 'barcelona' }   
-      ]}
+    beforeEach(() => {
+    wrapper = shallow(<SearchHighlightContainer
+        displayGames={[{ id: 'barcelona' }]}
     />)
   })
 
@@ -20,12 +19,10 @@ describe('HighlightContainer', () => {
   describe('mapsStateToProps', () => {
     it('should return only game highlights from the store', () => {
         const mockState = {
-            games: [],
-            displayGames: [],
+            displayGames: [{ team: 'barcelona' }],
         };
         const expected = {
-            games: [],
-            displayGames: [],
+            displayGames: [{ team: 'barcelona' }],
         };
         const mappedProps = mapStateToProps(mockState);
 

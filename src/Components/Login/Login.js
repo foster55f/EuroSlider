@@ -1,7 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { addUser, userLogIn} from '../../actions';
+import { addUser, userLogIn } from '../../actions';
+import PropTypes from 'prop-types';
+
 
 
 export class Login extends React.Component {
@@ -15,14 +17,14 @@ export class Login extends React.Component {
     }
 
     goToFavorites = () => {
-    // this.props.history.push(`/yourfavorites`)
+    this.props.history.push(`/yourfavorites`)
         if (this.state.username === '' || this.state.passwordLength > 0) {
             this.setState({ error: 'THE USERNAME OR PASSWORD IS INCORECT' })
         }
     }
 
     goToUserFavorites = () => {
-        // this.props.history.push("user/favorites")
+        this.props.history.push("user/favorites")
             // this.setState({ loggedIn: true })
             if (this.state.username === '' || this.state.passwordLength > 0) {
                 this.setState({ error: 'THE USERNAME OR PASSWORD IS INCORECT' })
@@ -83,3 +85,10 @@ export const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login))
+
+Login.propTypes = {
+    user: PropTypes.object,
+    userLog: PropTypes.bool,
+    addUser: PropTypes.func,
+    userLogIn: PropTypes.func,
+}

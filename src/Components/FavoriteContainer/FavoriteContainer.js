@@ -1,6 +1,8 @@
 import React from 'react'
 import HighlightCard from '../HighlightCard/HighlightCard';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 
 
 export const FavoriteContainer = ({ favoriteGames }) => {
@@ -23,6 +25,10 @@ export const FavoriteContainer = ({ favoriteGames }) => {
 }
 export const mapStateToProps = state => ({
     favoriteGames: state.favoriteGames
-  })
-  
-  export default connect(mapStateToProps)(FavoriteContainer)
+})
+
+export default connect(mapStateToProps)(FavoriteContainer)
+
+FavoriteContainer.propTypes = {
+    favoriteGames: PropTypes.array.isRequired,
+}
