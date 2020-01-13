@@ -15,14 +15,14 @@ export class Login extends React.Component {
     }
 
     goToFavorites = () => {
-    this.props.history.push(`/yourfavorites`)
+    // this.props.history.push(`/yourfavorites`)
         if (this.state.username === '' || this.state.passwordLength > 0) {
             this.setState({ error: 'THE USERNAME OR PASSWORD IS INCORECT' })
         }
     }
 
     goToUserFavorites = () => {
-        this.props.history.push("user/favorites")
+        // this.props.history.push("user/favorites")
             // this.setState({ loggedIn: true })
             if (this.state.username === '' || this.state.passwordLength > 0) {
                 this.setState({ error: 'THE USERNAME OR PASSWORD IS INCORECT' })

@@ -8,9 +8,40 @@ describe('Login', () => {
   let wrapper;
 
   it('should match the App snapshot', () => {
-    let wrapper = shallow(<Login />);
+    wrapper = shallow(<Login />);
     expect(wrapper).toMatchSnapshot();
   })
+
+
+  it('should update state on change', () => {
+    let mockEvent = { target: { value: 'foster' } }
+    let initialState = { username: '' }
+    let expectedState = 'foster' 
+    
+    wrapper.setState(initialState)
+    wrapper.find('.userName').simulate('change', mockEvent)
+    expect(wrapper.state('username')).toEqual(expectedState)
+  });
+
+  it('should run goToUserFavorites when the button is clicked', () => {
+    wrapper.instance().goToUserFavorites = jest.fn();
+    wrapper.instance().goToUserFavorites();
+    const mockEvent = { preventDefault: jest.fn() };
+  
+    wrapper.find('.favorite-button').simulate('click', mockEvent);
+  
+    expect(wrapper.instance().goToUserFavorites).toHaveBeenCalled();
+  });
+
+  it('should run goToFavorites when the button is clicked', () => {
+    wrapper.instance().goToFavorites = jest.fn();
+    wrapper.instance().goToFavorites();
+    const mockEvent = { preventDefault: jest.fn() };
+  
+    wrapper.find('.favorite-button').simulate('click', mockEvent);
+  
+    expect(wrapper.instance().goToFavorites).toHaveBeenCalled();
+  });
 
 
   describe('mapsStateToProps', () => {
@@ -27,6 +58,7 @@ describe('Login', () => {
 
         expect(mappedProps).toEqual(expected);
     });
+
 });
 
 describe('mapDispatchToProps', () => {
