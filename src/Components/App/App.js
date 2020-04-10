@@ -1,4 +1,3 @@
-import React from 'react';
 import './App.css';
 import HighlightContainer from '../HighlightContainer/HighlightContainer';
 import SearchHighlightContainer from '../SearchHighlightContainer/SearchHighlightContainer';
@@ -15,33 +14,43 @@ import SearchForm from '../SearchForm/SearchForm';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { retrieveGames } from '../../fetchcalls';
+import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+
+
   
 
 
 
-export class App extends React.Component {
-  constructor() {
-    super();
-  }
+const App = () => {
+  const dispatch = useDispatch();
+  const { movies } = useSelector(state => state);
+  const { favoriteMovies } = useSelector(state => state);
 
-  componentDidMount() {
+  // componentDidMount() {
+  //   retrieveGames('https://www.scorebat.com/video-api/v1/')
+  //     .then(data => {
+  //       this.props.addGames(data)
+  //       this.props.filterGames(data)
+  //     })
+  // }
+
+  useEffect(() => {
     retrieveGames('https://www.scorebat.com/video-api/v1/')
-      .then(data => {
-        this.props.addGames(data)
-        this.props.filterGames(data)
-      })
-  }
+      .then(games => {
+        dispatch(addGames(games))
+    })
+  }, []);
 
-  filterSearch = (search) => {
-    this.props.history.push(`/yoursearch`)
-    this.props.filterGames(search)
-  }
+  // filterSearch = (search) => {
+  //   this.props.history.push(`/yoursearch`)
+  //   this.props.filterGames(search)
+  // }
 
-  goToHomePage = () => {
-    this.props.history.push(`/`)
-}
+//   goToHomePage = () => {
+//     this.props.history.push(`/`)
+// }
 
-  render() {
     return (
       <div className="App">
         <Route
@@ -50,7 +59,7 @@ export class App extends React.Component {
             return (
               <>
               <Login />
-                <SearchForm search={this.filterSearch} />
+                {/* <SearchForm search={this.filterSearch} /> */}
               <HighlightContainer />                
               </>
             )
@@ -114,20 +123,9 @@ export class App extends React.Component {
       </div>
     )
   }
-}
 
-export const mapStateToProps = (state) => ({
-  user: state.user,
-  games: state.games,
-  displayGames: state.displayGames,
 
-})
 
-export const mapDispatchToProps = dispatch => ({
-  addGames: games => dispatch(addGames(games)),
-  filterGames: displayGames => dispatch(filterGames(displayGames)),
-  addUser: user => dispatch(addUser(user))
-})
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App))
+export default (withRouter(App))
 
