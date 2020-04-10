@@ -53,7 +53,7 @@ export class HighlightCard extends React.Component {
                     <button className='share-button' id={this.props.title} onClick = {event => this.pickFavoriteVideos(event.target.id)}>Add Favorite</button>                    
                 } 
                 {this.props.userLog &&
-                    <button className='remove-button' id={this.props.title} onClick = {event => this.removeUserFavoriteVideos(event.target.id)}>Remove Your Favorite </button>
+                    <button className='remove-button' id={this.props.title} onClick = {event => this.removeUserFavoriteVideos(event.target.id)}>Remove </button>
                 }
                 {!this.props.userLog &&
                     <button className='remove-button' id={this.props.title} onClick = {event => this.removeFavoriteVideos(event.target.id)}>Remove </button>

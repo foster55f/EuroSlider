@@ -57,7 +57,7 @@ export class Login extends React.Component {
                             {/* <input type="password" placeholder='PASSWORD' onChange={(event) => { this.setState({ password: event.target.value }); this.setState({ passwordLength: event.target.value.length }); }} />  */}
                             {/* <h1>Hello {this.state.username}</h1> */}
                             {this.state.error}
-                                <button className='create-user-button' onClick={this.createUser}> Click to Create Your Profile</button> 
+                                <button className='create-user-button' onClick={this.createUser}> Login</button> 
                             </div>
                             {this.props.userLog &&
                                 <button className='favorite-button' onClick={this.goToUserFavorites}> {`Click to View ${this.props.user.name} Favorite Highlights!`}</button>

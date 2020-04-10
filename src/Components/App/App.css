@@ -24,8 +24,13 @@ button {
 }
 
 .create-user-button {
-  height: 58px;
-  width: 30%;
+  width: 40%;
+  height:30px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: yellow;
+  padding: .5vw;
+  font-size: 1.3vw;
 }
 
 .title-font {
@@ -121,7 +126,7 @@ nav {
 
 .userName{
   margin:auto;
-  width: 30%;
+  width: 50%;
   height: 30px;
   border-radius: 10px;
   font-size: 20px;
