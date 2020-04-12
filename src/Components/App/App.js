@@ -27,13 +27,7 @@ const App = () => {
   const { movies } = useSelector(state => state);
   const { favoriteMovies } = useSelector(state => state);
 
-  // componentDidMount() {
-  //   retrieveGames('https://www.scorebat.com/video-api/v1/')
-  //     .then(data => {
-  //       this.props.addGames(data)
-  //       this.props.filterGames(data)
-  //     })
-  // }
+
 
   useEffect(() => {
     retrieveGames('https://www.scorebat.com/video-api/v1/')
