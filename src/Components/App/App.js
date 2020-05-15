@@ -66,8 +66,11 @@ const App = () => {
           render={() => {
             return (
               <>    
-              <Login />                
-              <FavoriteContainer />               
+                <Login />    
+                  <Link to='/' >
+                  Go Back Home
+                  </Link>   
+                <FavoriteContainer />               
               </>              
             )
           }}
