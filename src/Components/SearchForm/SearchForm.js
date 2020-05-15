@@ -43,13 +43,8 @@ export class SearchForm extends React.Component {
     }
 }
 
-// export const mapStateToProps = (state) => ({
-//     games: state.games,
-//   })
   
-
-  
-export default connect(mapStateToProps)(SearchForm)
+export default connect(SearchForm)
   
 SearchForm.propTypes = {
     games: PropTypes.object,

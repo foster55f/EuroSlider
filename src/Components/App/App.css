@@ -98,6 +98,7 @@ nav {
   background-color: yellow;
   padding: .5vw;
   font-size: 1.3vw;
+  outline: none;
 }
 
 .remove-button{
@@ -122,6 +123,7 @@ nav {
 
 .favorite-button{
   background-color: yellow;
+  outline: none;
 }
 
 .userName{
