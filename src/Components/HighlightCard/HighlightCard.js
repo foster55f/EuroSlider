@@ -5,9 +5,10 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch} from 'react-redux';
 
 
-const HighlightCard = () => {
-    const games = useSelector(state => state.games) 
+const HighlightCard = ({title, embed}) => {
+    const games = useSelector(state => state.games);
     const dispatch = useDispatch();
+
     const pickFavoriteVideos = (id) => {
         const favorite = games.find(game => {
             return game.title === id
@@ -24,10 +25,10 @@ const HighlightCard = () => {
 
         return (
             <article className='game-card'>
-                <h1 className='title-font'>{games.title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: `${this.props.embed}` }} />  
-                    <button className='share-button' id={games.title} onClick = {event => pickFavoriteVideos(event.target.id)}>Add Favorite</button>                    
-                    <button className='remove-button' id={games.title} onClick = {event => removeFavoriteVideos(event.target.id)}>Remove </button>       
+                <h1 className='title-font'>{title}</h1>
+                <div dangerouslySetInnerHTML={{ __html: `${embed}` }} />  
+                    <button className='share-button' id={title} onClick = {event => pickFavoriteVideos(event.target.id)}>Add Favorite</button>                    
+                    <button className='remove-button' id={title} onClick = {event => removeFavoriteVideos(event.target.id)}>Remove </button>       
             </article>
         )
     }

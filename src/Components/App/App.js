@@ -65,7 +65,8 @@ const App = () => {
           exact path="/yourfavorites"
           render={() => {
             return (
-              <>              
+              <>    
+              <Login />                
               <FavoriteContainer />               
               </>              
             )

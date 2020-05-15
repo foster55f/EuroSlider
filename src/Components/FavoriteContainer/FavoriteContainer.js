@@ -5,7 +5,8 @@ import { useSelector} from 'react-redux';
 
 
 const FavoriteContainer = () => {
-    const favoriteGames = useSelector(state => state.favoriteGames) 
+    const favoriteGames = useSelector(state => state.favoriteGames);
+    console.log(favoriteGames)
     return (
         <div className= 'game-container'>
             {favoriteGames.map((game, i) => {
