@@ -11,14 +11,13 @@ import SearchForm from '../SearchForm/SearchForm';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { retrieveGames } from '../../fetchcalls';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import React, { useEffect } from 'react';
 
 
 
 const App = () => {
   const dispatch = useDispatch();
-
 
   useEffect(() => {
     retrieveGames('https://www.scorebat.com/video-api/v1/')
