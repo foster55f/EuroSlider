@@ -5,7 +5,6 @@ import { addUser, userLogIn } from '../../actions';
 import PropTypes from 'prop-types';
 
 
-
 export class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -21,6 +20,7 @@ export class Login extends React.Component {
         if (this.state.username === '' || this.state.passwordLength > 0) {
             this.setState({ error: 'THE USERNAME OR PASSWORD IS INCORECT' })
         }
+        console.log('hello')
     }
 
     goToUserFavorites = () => {
@@ -51,14 +51,11 @@ export class Login extends React.Component {
                 <nav>
                 <h2 className='header-title'>Euro Slider</h2>
                         <>
-                            <div className = 'user-entry'>
+                            {/* <div className = 'user-entry'>
                             <input className='userName' type="text" placeholder='ENTER NAME' onChange={(event) => this.setState({ username: event.target.value })} />
-                            {/* <input className = 'password'type="text" placeholder='password' onChange={(event) => this.setState({ password: event.target.value })} /> */}
-                            {/* <input type="password" placeholder='PASSWORD' onChange={(event) => { this.setState({ password: event.target.value }); this.setState({ passwordLength: event.target.value.length }); }} />  */}
-                            {/* <h1>Hello {this.state.username}</h1> */}
                             {this.state.error}
                                 <button className='create-user-button' onClick={this.createUser}> Login</button> 
-                            </div>
+                            </div> */}
                             {this.props.userLog &&
                                 <button className='favorite-button' onClick={this.goToUserFavorites}> {`Click to View ${this.props.user.name} Favorite Highlights!`}</button>
                             }
@@ -83,7 +80,6 @@ export const mapDispatchToProps = (dispatch) => ({
     userLogIn: loggedIn => dispatch(userLogIn(loggedIn))
 
 })
-
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login))
 
 Login.propTypes = {

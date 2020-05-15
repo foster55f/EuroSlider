@@ -4,11 +4,8 @@ import SearchHighlightContainer from '../SearchHighlightContainer/SearchHighligh
 import UserContainer from '../UserContainer/UserContainer';
 import FavoriteContainer from '../FavoriteContainer/FavoriteContainer';
 import UserFavoriteContainer from '../UserFavoriteContainer/UserFavoriteContainer';
-import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { addGames } from '../../actions';
-import { addUser} from '../../actions';
-import { filterGames } from '../../actions';
 import Login from '../Login/Login';
 import SearchForm from '../SearchForm/SearchForm';
 import { Route } from 'react-router-dom';
@@ -18,15 +15,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 
 
-  
-
-
 
 const App = () => {
   const dispatch = useDispatch();
-  const { movies } = useSelector(state => state);
-  const { favoriteMovies } = useSelector(state => state);
-
 
 
   useEffect(() => {
@@ -36,14 +27,14 @@ const App = () => {
     })
   }, []);
 
-  // filterSearch = (search) => {
-  //   this.props.history.push(`/yoursearch`)
-  //   this.props.filterGames(search)
-  // }
+  const filterSearch = (search) => {
+    this.props.history.push(`/yoursearch`)
+    this.props.filterGames(search)
+  }
 
-//   goToHomePage = () => {
-//     this.props.history.push(`/`)
-// }
+  const goToHomePage = () => {
+    this.props.history.push(`/`)
+}
 
     return (
       <div className="App">
@@ -107,19 +98,15 @@ const App = () => {
                 <Link to='/' >
                   Go Back Home
                 </Link>  
-              <SearchForm search={this.filterSearch} />                
+              <SearchForm search={filterSearch} />                
               <FavoriteContainer />               
-              </>
-              
+              </>              
             )
           }}
         />
       </div>
     )
   }
-
-
-
 
 export default (withRouter(App))
 

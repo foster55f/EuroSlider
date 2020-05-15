@@ -7,10 +7,10 @@ import PropTypes from 'prop-types';
 export const HighLightContainer = ({ games }) => {
     return (
         <div className= 'game-container'>
-            {games.map(game => {
+            {games.map((game, i) => {
             return (
                 <HighlightCard
-                key={game.competition.id}
+                key={i}
                 id={game.competition.id} 
                 title={game.title}
                 image={game.thumbnail}
