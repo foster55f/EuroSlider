@@ -1,16 +1,17 @@
 import React from 'react'
 import HighlightCard from '../HighlightCard/HighlightCard';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
+import { useSelector} from 'react-redux';
 
 
-const FavoriteContainer = ({ favoriteGames }) => {
+const FavoriteContainer = () => {
+    const favoriteGames = useSelector(state => state.favoriteGames) 
     return (
         <div className= 'game-container'>
-            {favoriteGames.map(game => {
+            {favoriteGames.map((game, i) => {
             return (
                 <HighlightCard
-                key={game.competition.id}
+                key={i}
                 id={game.competition.id} 
                 title={game.title}
                 image={game.thumbnail}
@@ -22,11 +23,8 @@ const FavoriteContainer = ({ favoriteGames }) => {
         </div>
     )
 }
-export const mapStateToProps = state => ({
-    favoriteGames: state.favoriteGames
-})
 
-export default (withRouter(FavoriteContainer))
+export default FavoriteContainer
 
 FavoriteContainer.propTypes = {
     favoriteGames: PropTypes.array.isRequired,

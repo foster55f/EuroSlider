@@ -1,10 +1,7 @@
 import './App.css';
 import HighlightContainer from '../HighlightContainer/HighlightContainer';
 import SearchHighlightContainer from '../SearchHighlightContainer/SearchHighlightContainer';
-import UserContainer from '../UserContainer/UserContainer';
 import FavoriteContainer from '../FavoriteContainer/FavoriteContainer';
-import UserFavoriteContainer from '../UserFavoriteContainer/UserFavoriteContainer';
-import { withRouter } from 'react-router-dom';
 import { addGames } from '../../actions';
 import Login from '../Login/Login';
 import SearchForm from '../SearchForm/SearchForm';
@@ -65,39 +62,10 @@ const App = () => {
           }}
         />
         <Route
-        exact path="/user/favorites"
-        render={() => {
-          return (
-            <>
-            <Login />  
-              <UserContainer /> 
-              <UserFavoriteContainer />               
-            </>
-          )
-        }}
-      />
-        <Route
-          exact path="/user"
-          render={() => {
-            return (
-              <>
-              <Login />  
-                <UserContainer /> 
-              <HighlightContainer />               
-              </>
-            )
-          }}
-        />
-        <Route
           exact path="/yourfavorites"
           render={() => {
             return (
-              <>
-              <Login />  
-                <Link to='/' >
-                  Go Back Home
-                </Link>  
-              <SearchForm search={filterSearch} />                
+              <>              
               <FavoriteContainer />               
               </>              
             )
@@ -107,5 +75,5 @@ const App = () => {
     )
   }
 
-export default (withRouter(App))
+export default App
 
