@@ -1,9 +1,8 @@
 import React from 'react'
 import HighlightCard from '../HighlightCard/HighlightCard';
-import { connect } from 'react-redux';
 
 
-export const UserFavoriteContainer = ({ games, displayGames, favoriteGames, userFavoriteGames }) => {
+const UserFavoriteContainer = ({ userFavoriteGames }) => {
     return (
         <div className= 'game-container'>
             {userFavoriteGames.map(game => {
@@ -29,4 +28,4 @@ export const mapStateToProps = state => ({
     userFavoriteGames: state.userFavoriteGames
   })
   
-  export default connect(mapStateToProps)(UserFavoriteContainer)
+  export default (UserFavoriteContainer)
