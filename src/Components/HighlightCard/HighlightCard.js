@@ -22,7 +22,6 @@ const HighlightCard = ({title, embed, path}) => {
         })
         dispatch(removeGames(videoToRemove))
     }
-
         return (
             <article className='game-card'>
                 <h1 className='title-font'>{title}</h1>
