@@ -63,14 +63,14 @@ const App = () => {
         />
         <Route
           exact path="/yourfavorites"
-          render={() => {
+          render={({ location }) => {
             return (
               <>    
                 <Login />    
                   <Link to='/' >
                   Go Back Home
                   </Link>   
-                <FavoriteContainer />               
+                <FavoriteContainer path={location.pathname}/>               
               </>              
             )
           }}

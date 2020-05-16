@@ -3,8 +3,9 @@ export const favoriteGames = (state = [], action) => {
         case 'FAVORITE_GAMES':
             return [...state, action.favoriteGames]
         case 'REMOVE_GAMES':
-                state.splice(state.indexOf(action.favoriteGames), 1 );
-            return [...state]
+            let newState = [...state];
+            newState.splice(newState.indexOf(action.favoriteGames), 1 );
+            return newState;
         default:
             return state
     }

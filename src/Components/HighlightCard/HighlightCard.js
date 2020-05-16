@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { useSelector, useDispatch} from 'react-redux';
 
 
-const HighlightCard = ({title, embed}) => {
+const HighlightCard = ({title, embed, path}) => {
     const games = useSelector(state => state.games);
     const dispatch = useDispatch();
 
@@ -22,13 +22,16 @@ const HighlightCard = ({title, embed}) => {
         })
         dispatch(removeGames(videoToRemove))
     }
-
         return (
             <article className='game-card'>
                 <h1 className='title-font'>{title}</h1>
-                <div dangerouslySetInnerHTML={{ __html: `${embed}` }} />  
-                    <button className='share-button' id={title} onClick = {event => pickFavoriteVideos(event.target.id)}>Add Favorite</button>                    
-                    <button className='remove-button' id={title} onClick = {event => removeFavoriteVideos(event.target.id)}>Remove </button>       
+                <div dangerouslySetInnerHTML={{ __html: `${embed}` }} /> 
+                {path !== '/yourfavorites' && (
+                    <button className='share-button' id={title} onClick={event => pickFavoriteVideos(event.target.id)}>Add Favorite</button>
+                )}
+                {path === '/yourfavorites' && (
+                    <button className='share-button' id={title} onClick={event => removeFavoriteVideos(event.target.id)}>Remove Favorite</button>
+                )}
             </article>
         )
     }

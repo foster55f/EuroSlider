@@ -9,7 +9,7 @@
 }
 
 .game-card {
-  background-color: cadetblue;
+  background-color: aliceblue;
   margin: 16px;
 }
 
@@ -23,15 +23,6 @@ button {
   border-radius: 5px;
 }
 
-.create-user-button {
-  width: 40%;
-  height:30px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  background-color: yellow;
-  padding: .5vw;
-  font-size: 1.3vw;
-}
 
 .title-font {
   font-size: 20px;
@@ -90,25 +81,13 @@ nav {
 }
 
 .share-button{
-  width: 40%;
-  height:30px;
-  margin:auto;
+  font-size: smaller;
+  text-align: center;
+  margin: auto;
   margin-top: 5px;
   margin-bottom: 5px;
-  background-color: yellow;
-  padding: .5vw;
-  font-size: 1.3vw;
+  background-color: dodgerblue;
   outline: none;
-}
-
-.remove-button{
-  width: 40%;
-  height:30px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  background-color: yellow;
-  padding: .5vw;
-  font-size: 1.3vw;
 }
 
 .search-input {
@@ -122,7 +101,9 @@ nav {
 }
 
 .favorite-button{
-  background-color: yellow;
+  background-color: dodgerblue;
+  text-align: center;
+  margin: auto;
   outline: none;
 }
 

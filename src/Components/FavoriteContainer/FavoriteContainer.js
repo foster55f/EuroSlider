@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 import { useSelector} from 'react-redux';
 
 
-const FavoriteContainer = () => {
+const FavoriteContainer = ({ path }) => {
     const favoriteGames = useSelector(state => state.favoriteGames);
-    console.log(favoriteGames)
     return (
         <div className= 'game-container'>
             {favoriteGames.map((game, i) => {
@@ -17,7 +16,8 @@ const FavoriteContainer = () => {
                 title={game.title}
                 image={game.thumbnail}
                 url={game.url}
-                embed ={game.videos[0].embed}     
+                embed={game.videos[0].embed} 
+                path={path}    
             />
             )
         })}

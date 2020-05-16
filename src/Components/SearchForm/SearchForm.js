@@ -1,7 +1,5 @@
 import React from 'react';
-import { filterGames } from '../../actions';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 export class SearchForm extends React.Component {
@@ -43,9 +41,9 @@ export class SearchForm extends React.Component {
     }
 }
 
-  
+
 export default connect(SearchForm)
-  
+
 SearchForm.propTypes = {
     games: PropTypes.object,
 }
