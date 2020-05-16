@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should match the App snapshot 1`] = `
+<Fragment>
+  <div
+    className="header-background"
+  >
+    <nav>
+      <h2
+        className="header-title"
+      >
+        Euro Slider
+      </h2>
+      <div
+        className="user-entry"
+      >
+        <input
+          className="userName"
+          onChange={[Function]}
+          placeholder="ENTER NAME"
+          type="text"
+        />
+        <button
+          className="create-user-button"
+          onClick={[Function]}
+        >
+           Click to Create Your Profile
+        </button>
+      </div>
+      <button
+        className="favorite-button"
+        onClick={[Function]}
+      >
+         Click to View Your Favorite Highlights!
+      </button>
+    </nav>
+  </div>
+</Fragment>
+`;

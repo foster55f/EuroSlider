@@ -1,16 +1,18 @@
 import React from 'react'
 import HighlightCard from '../HighlightCard/HighlightCard';
-import { connect } from 'react-redux';
-import { displayGames } from '../../reducers/displayGames';
+import PropTypes from 'prop-types';
+import { useSelector, useDispatch} from 'react-redux';
 
 
-const HighLightContainer = ({ games, displayGames }) => {
+
+export const HighLightContainer = () => {
+    const games = useSelector(state => state.games);
     return (
         <div className= 'game-container'>
-            {displayGames.map(game => {
+            {games.map((game, i) => {
             return (
                 <HighlightCard
-                key={game.competition.id}
+                key={i}
                 id={game.competition.id} 
                 title={game.title}
                 image={game.thumbnail}
@@ -27,4 +29,9 @@ export const mapStateToProps = state => ({
     displayGames: state.displayGames
   })
   
-  export default connect(mapStateToProps)(HighLightContainer)
+export default HighLightContainer
+
+HighLightContainer.propTypes = {
+    games: PropTypes.array.isRequired,
+    displayGames: PropTypes.array.isRequired,
+}

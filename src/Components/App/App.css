@@ -9,7 +9,7 @@
 }
 
 .game-card {
-  background-color: cadetblue;
+  background-color: aliceblue;
   margin: 16px;
 }
 
@@ -22,6 +22,7 @@ button {
   left:65%;
   border-radius: 5px;
 }
+
 
 .title-font {
   font-size: 20px;
@@ -54,7 +55,7 @@ nav {
 .header-title {
   color:white;
   font-size: 4vw;
-  margin-left: 15%;
+  margin-left: 2%;
 }
 
 .App-link {
@@ -80,10 +81,61 @@ nav {
 }
 
 .share-button{
-  width: 50%;
-  margin:auto;
+  font-size: smaller;
+  text-align: center;
+  margin: auto;
   margin-top: 5px;
   margin-bottom: 5px;
+  background-color: dodgerblue;
+  outline: none;
+}
+
+.search-input {
+  width: 30%;
+  height: 30px;
+  border-radius: 10px;
+  margin-top:10px;
+  font-size: 20px;
+  text-align: center;
+  margin-left:10px;
+}
+
+.favorite-button{
+  background-color: dodgerblue;
+  text-align: center;
+  margin: auto;
+  outline: none;
+}
+
+.userName{
+  margin:auto;
+  width: 50%;
+  height: 30px;
+  border-radius: 10px;
+  font-size: 20px;
+  text-align: center
+}
+
+.password{
+    margin:auto;
+    width: 30%;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center
+}
+
+.searchButton {
+  width: 20%;
+  height: 30px;
+  border-radius: 10px;
+  text-align: center;
+  padding:0px;
+  background-color:yellow
+}
+
+.user-entry {
+  display: flex;
 }
 
 @keyframes App-logo-spin {

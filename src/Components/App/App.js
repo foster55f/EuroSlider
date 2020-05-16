@@ -1,42 +1,37 @@
-import React from 'react';
 import './App.css';
 import HighlightContainer from '../HighlightContainer/HighlightContainer';
 import SearchHighlightContainer from '../SearchHighlightContainer/SearchHighlightContainer';
 import FavoriteContainer from '../FavoriteContainer/FavoriteContainer';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
-import { addGames} from '../../actions';
-import { filterGames } from '../../actions';
-import Login from '../../Login/Login';
-import SearchForm from '../../SearchForm/SearchForm';
+import { addGames } from '../../actions';
+import Login from '../Login/Login';
+import SearchForm from '../SearchForm/SearchForm';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { retrieveGames } from '../../fetchcalls';
+import { useDispatch} from 'react-redux';
+import React, { useEffect } from 'react';
 
 
-export class App extends React.Component {
-  constructor() {
-    super();
-  }
 
-  componentDidMount() {
-    fetch('https://www.scorebat.com/video-api/v1/')
-      .then(response => response.json())
-      .then(data => {
-        this.props.addGames(data)
-        this.props.filterGames(data)
-      })
-  }
+const App = () => {
+  const dispatch = useDispatch();
 
-  filterSearch = (search) => {
+  useEffect(() => {
+    retrieveGames('https://www.scorebat.com/video-api/v1/')
+      .then(games => {
+        dispatch(addGames(games))
+    })
+  }, []);
+
+  const filterSearch = (search) => {
     this.props.history.push(`/yoursearch`)
     this.props.filterGames(search)
   }
 
-  goToHomePage = () => {
+  const goToHomePage = () => {
     this.props.history.push(`/`)
 }
 
-  render() {
     return (
       <div className="App">
         <Route
@@ -45,8 +40,8 @@ export class App extends React.Component {
             return (
               <>
               <Login />
-              <SearchForm search={this.filterSearch} />
-              <SearchHighlightContainer />
+                {/* <SearchForm search={this.filterSearch} /> */}
+              <HighlightContainer />                
               </>
             )
           }}
@@ -60,41 +55,29 @@ export class App extends React.Component {
                 <Link to='/' >
                   Go Back Home
                 </Link>  
-              <SearchForm search={this.filterSearch} />                
-              <HighlightContainer />               
+                <SearchForm search={this.filterSearch} />                 
+                <SearchHighlightContainer />
               </>
             )
           }}
         />
         <Route
           exact path="/yourfavorites"
-          render={() => {
+          render={({ location }) => {
             return (
-              <>
-              <Login />  
-                <Link to='/' >
+              <>    
+                <Login />    
+                  <Link to='/' >
                   Go Back Home
-                </Link>  
-              <SearchForm search={this.filterSearch} />                
-              <FavoriteContainer />               
-              </>
+                  </Link>   
+                <FavoriteContainer path={location.pathname}/>               
+              </>              
             )
           }}
         />
       </div>
     )
   }
-}
 
-export const mapStateToProps = (state) => ({
-  games: state.games,
-  displayGames: state.displayGames
-})
-
-export const mapDispatchToProps = dispatch => ({
-  addGames: games => dispatch(addGames(games)),
-  filterGames: displayGames => dispatch(filterGames(displayGames))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App))
+export default App
 

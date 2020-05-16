@@ -1,31 +1,32 @@
 import React from 'react'
 import HighlightCard from '../HighlightCard/HighlightCard';
-import { connect } from 'react-redux';
-import { favoriteGames } from '../../reducers/favoriteGames';
+import PropTypes from 'prop-types';
+import { useSelector} from 'react-redux';
 
 
-const FavoriteContainer = ({ games, displayGames, favoriteGames }) => {
+const FavoriteContainer = ({ path }) => {
+    const favoriteGames = useSelector(state => state.favoriteGames);
     return (
         <div className= 'game-container'>
-            {favoriteGames.map(game => {
+            {favoriteGames.map((game, i) => {
             return (
                 <HighlightCard
-                key={game.competition.id}
+                key={i}
                 id={game.competition.id} 
                 title={game.title}
                 image={game.thumbnail}
                 url={game.url}
-                embed ={game.videos[0].embed}     
+                embed={game.videos[0].embed} 
+                path={path}    
             />
             )
         })}
         </div>
     )
 }
-export const mapStateToProps = state => ({
-    games: state.games,
-    displayGames: state.displayGames,
-    favoriteGames: state.favoriteGames
-  })
-  
-  export default connect(mapStateToProps)(FavoriteContainer)
+
+export default FavoriteContainer
+
+FavoriteContainer.propTypes = {
+    favoriteGames: PropTypes.array.isRequired,
+}
