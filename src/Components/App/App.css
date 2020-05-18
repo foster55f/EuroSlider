@@ -138,9 +138,11 @@ nav {
 }
 
 .searchButton {
+  outline: none;
   text-align: center;
   margin-top: 10px;
   background-color:dodgerblue;
+  cursor: pointer;
 }
 
 .user-entry {

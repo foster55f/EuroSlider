@@ -8,16 +8,6 @@ const SearchForm = (props) => {
     const games = useSelector(state => state.games);
     const [state, setState] = useState({foundGames:[], searchField:''});
 
-
-// export class SearchForm extends React.Component {
-//     constructor(props) {
-//         super(props);
-//         this.state = {
-//             searchField: '',
-//             foundGames: []
-//         }
-//     }
-
     const handleSearch = (event) => {
         event.preventDefault()
         const foundGamesArray = games.filter(game => {
