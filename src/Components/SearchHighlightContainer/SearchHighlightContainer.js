@@ -1,9 +1,10 @@
 import React from 'react'
 import HighlightCard from '../HighlightCard/HighlightCard';
-import { connect } from 'react-redux';
+import { useSelector} from 'react-redux';
 
 
-export const SearchHighlightContainer = ({ displayGames }) => {
+export const SearchHighlightContainer = () => {
+    const displayGames = useSelector(state => state.displayGames);
     return (
         <div className= 'game-container'>
             {displayGames.map(game => {
@@ -21,9 +22,5 @@ export const SearchHighlightContainer = ({ displayGames }) => {
         </div>
     )
 }
-export const mapStateToProps = state => ({
-    displayGames: state.displayGames
-})
 
-
-export default connect(mapStateToProps)(SearchHighlightContainer)
+export default SearchHighlightContainer

@@ -1,27 +1,22 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import App from '../App/App';
+import { useSelector, useDispatch} from 'react-redux';
 
-export class SearchForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            searchField: '',
-            foundGames: []
-        }
-    }
 
-    handleSearch = (event) => {
+const SearchForm = (props) => {
+    const games = useSelector(state => state.games);
+    const [state, setState] = useState({foundGames:[], searchField:''});
+
+    const handleSearch = (event) => {
         event.preventDefault()
-        const foundGamesArray = this.props.games.filter(game => {
-            return game.title.toLowerCase().includes(this.state.searchField.toLowerCase())|| game.title.toLowerCase().includes(this.state.searchField.toLowerCase())
+        const foundGamesArray = games.filter(game => {
+            return game.title.toLowerCase().includes(state.searchField.toLowerCase())|| game.title.toLowerCase().includes(state.searchField.toLowerCase())
         })
-        this.props.search(foundGamesArray)
-        this.setState({ searchField: '' })
+        props.search(foundGamesArray)
+        setState({ searchField: '' })
     }
 
-    
-    render() {
         return (
             <header>
             <div className='searchContainer'>   
@@ -30,19 +25,20 @@ export class SearchForm extends React.Component {
                     type='text'
                     placeholder='Search For Highlights'
                     name='title'
-                    onChange={event => this.setState({ searchField: event.target.value })}
-                    value={this.state.searchField}
-                />
-                    <button onClick={this.handleSearch} className="searchButton">Search</button>
+                    onChange={event => setState({ searchField: event.target.value })}
+                    value={state.searchField}
+                    />
+                    <div className='search-div'>
+                        <button onClick={handleSearch} className="searchButton">Search</button>
+                    </div>
                     
             </div>
         </header>
         )
     }
-}
 
 
-export default connect(SearchForm)
+export default SearchForm
 
 SearchForm.propTypes = {
     games: PropTypes.object,

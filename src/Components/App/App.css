@@ -8,9 +8,10 @@
   pointer-events: none;
 }
 
-.game-card {
-  background-color: aliceblue;
-  margin: 16px;
+.game-card{
+  color: black;
+  background-color: black;
+  margin: 12px;
 }
 
 button {
@@ -25,7 +26,12 @@ button {
 
 
 .title-font {
-  font-size: 20px;
+  color: aliceblue;
+  font-size: 23px;
+}
+
+.header-favorite{
+  margin-left: 60%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -125,13 +131,18 @@ nav {
     text-align: center
 }
 
+.searchContainer{
+  display: flex;
+  flex-direction: row;
+
+}
+
 .searchButton {
-  width: 20%;
-  height: 30px;
-  border-radius: 10px;
+  outline: none;
   text-align: center;
-  padding:0px;
-  background-color:yellow
+  margin-top: 10px;
+  background-color:dodgerblue;
+  cursor: pointer;
 }
 
 .user-entry {

@@ -10,10 +10,12 @@ import { Link } from 'react-router-dom';
 import { retrieveGames } from '../../fetchcalls';
 import { useDispatch} from 'react-redux';
 import React, { useEffect } from 'react';
+import { withRouter } from 'react-router-dom';
+import { filterGames } from '../../actions';
 
 
 
-const App = () => {
+const App = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,8 +26,8 @@ const App = () => {
   }, []);
 
   const filterSearch = (search) => {
-    this.props.history.push(`/yoursearch`)
-    this.props.filterGames(search)
+    props.history.push(`/yoursearch`)
+    dispatch(filterGames(search))
   }
 
   const goToHomePage = () => {
@@ -40,7 +42,7 @@ const App = () => {
             return (
               <>
               <Login />
-                {/* <SearchForm search={this.filterSearch} /> */}
+              <SearchForm search={filterSearch}/>
               <HighlightContainer />                
               </>
             )
@@ -55,7 +57,7 @@ const App = () => {
                 <Link to='/' >
                   Go Back Home
                 </Link>  
-                <SearchForm search={this.filterSearch} />                 
+                <SearchForm search={filterSearch} />                 
                 <SearchHighlightContainer />
               </>
             )
@@ -79,5 +81,5 @@ const App = () => {
     )
   }
 
-export default App
+  export default (withRouter(App))
 
