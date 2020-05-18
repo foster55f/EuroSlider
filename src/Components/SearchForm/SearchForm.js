@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import App from '../App/App';
 import { useSelector, useDispatch} from 'react-redux';
-import { filterGames } from '../../actions';
 
 
-const SearchForm = () => {
+const SearchForm = (props) => {
     const games = useSelector(state => state.games);
-    const dispatch = useDispatch()
     const [state, setState] = useState({foundGames:[], searchField:''});
 
 
@@ -24,7 +23,7 @@ const SearchForm = () => {
         const foundGamesArray = games.filter(game => {
             return game.title.toLowerCase().includes(state.searchField.toLowerCase())|| game.title.toLowerCase().includes(state.searchField.toLowerCase())
         })
-        dispatch(filterGames(foundGamesArray))
+        props.search(foundGamesArray)
         setState({ searchField: '' })
     }
 
