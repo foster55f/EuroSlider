@@ -2,7 +2,10 @@ import React from 'react';
 import { addFavoriteGames} from '../../actions';
 import { removeGames } from '../../actions';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import './HighlightCard.css';
+
+
 
 
 const HighlightCard = ({title, embed, path}) => {

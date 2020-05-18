@@ -22,12 +22,11 @@
     "ws": "^7.3.0"
   },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --verbose",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm install --only=dev && npm install && npm run prod"
   },
   "eslintConfig": {
     "extends": "react-app"

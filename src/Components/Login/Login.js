@@ -13,16 +13,14 @@ const Login = (props) => {
         props.history.push(`/yourfavorites`)
     }  
         return (
-            <>
             <div className='header-background'>
                 <nav>
                 <h2 className='header-title'>Euro Slider</h2>
-                        <>
+                        <div className='header-favorite'>
                             <button className='favorite-button' onClick={goToFavorites}>View {favoriteGames.length} favorited Highlights!</button>
-                        </>
+                        </div>
                 </nav>
             </div>
-            </>
         )
     }
 

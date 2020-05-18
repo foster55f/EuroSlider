@@ -1,27 +1,33 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useSelector, useDispatch} from 'react-redux';
+import { filterGames } from '../../actions';
 
-export class SearchForm extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            searchField: '',
-            foundGames: []
-        }
-    }
 
-    handleSearch = (event) => {
+const SearchForm = () => {
+    const games = useSelector(state => state.games);
+    const dispatch = useDispatch()
+    const [state, setState] = useState({foundGames:[], searchField:''});
+
+
+// export class SearchForm extends React.Component {
+//     constructor(props) {
+//         super(props);
+//         this.state = {
+//             searchField: '',
+//             foundGames: []
+//         }
+//     }
+
+    const handleSearch = (event) => {
         event.preventDefault()
-        const foundGamesArray = this.props.games.filter(game => {
-            return game.title.toLowerCase().includes(this.state.searchField.toLowerCase())|| game.title.toLowerCase().includes(this.state.searchField.toLowerCase())
+        const foundGamesArray = games.filter(game => {
+            return game.title.toLowerCase().includes(state.searchField.toLowerCase())|| game.title.toLowerCase().includes(state.searchField.toLowerCase())
         })
-        this.props.search(foundGamesArray)
-        this.setState({ searchField: '' })
+        dispatch(filterGames(foundGamesArray))
+        setState({ searchField: '' })
     }
 
-    
-    render() {
         return (
             <header>
             <div className='searchContainer'>   
@@ -30,19 +36,20 @@ export class SearchForm extends React.Component {
                     type='text'
                     placeholder='Search For Highlights'
                     name='title'
-                    onChange={event => this.setState({ searchField: event.target.value })}
-                    value={this.state.searchField}
-                />
-                    <button onClick={this.handleSearch} className="searchButton">Search</button>
+                    onChange={event => setState({ searchField: event.target.value })}
+                    value={state.searchField}
+                    />
+                    <div className='search-div'>
+                        <button onClick={handleSearch} className="searchButton">Search</button>
+                    </div>
                     
             </div>
         </header>
         )
     }
-}
 
 
-export default connect(SearchForm)
+export default SearchForm
 
 SearchForm.propTypes = {
     games: PropTypes.object,

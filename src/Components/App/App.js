@@ -40,7 +40,7 @@ const App = () => {
             return (
               <>
               <Login />
-                {/* <SearchForm search={this.filterSearch} /> */}
+              <SearchForm />
               <HighlightContainer />                
               </>
             )

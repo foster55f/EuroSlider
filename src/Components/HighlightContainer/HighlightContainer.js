@@ -1,7 +1,7 @@
 import React from 'react'
 import HighlightCard from '../HighlightCard/HighlightCard';
 import PropTypes from 'prop-types';
-import { useSelector, useDispatch} from 'react-redux';
+import { useSelector} from 'react-redux';
 
 
 
