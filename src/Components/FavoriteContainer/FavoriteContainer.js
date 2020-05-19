@@ -5,7 +5,7 @@ import { useSelector} from 'react-redux';
 
 
 const FavoriteContainer = ({ path }) => {
-    const favoriteGames = useSelector(state => state.favoriteGames);
+    const { favoriteGames } = useSelector(state => state);
     return (
         <div className= 'game-container'>
             {favoriteGames.map((game, i) => {
@@ -17,7 +17,8 @@ const FavoriteContainer = ({ path }) => {
                 image={game.thumbnail}
                 url={game.url}
                 embed={game.videos[0].embed} 
-                path={path}    
+                path={path}
+                isFavorited = {favoriteGames.includes(game)}         
             />
             )
         })}
