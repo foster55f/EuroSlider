@@ -8,15 +8,17 @@ import './HighlightCard.css';
 
 
 
-const HighlightCard = ({title, embed, path}) => {
+const HighlightCard = ({title, embed, path, isFavorited}) => {
     const games = useSelector(state => state.games);
     const dispatch = useDispatch();
 
     const pickFavoriteVideos = (id) => {
-        const favorite = games.find(game => {
-            return game.title === id
-        })
-        dispatch(addFavoriteGames(favorite))
+        if (!isFavorited) {
+            const favorite = games.find(game => {
+                return game.title === id
+            })
+            dispatch(addFavoriteGames(favorite))
+        }
     }
 
     const removeFavoriteVideos = (id) => {
