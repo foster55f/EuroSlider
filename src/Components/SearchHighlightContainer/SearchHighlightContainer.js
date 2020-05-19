@@ -4,7 +4,7 @@ import { useSelector} from 'react-redux';
 
 
 export const SearchHighlightContainer = () => {
-    const displayGames = useSelector(state => state.displayGames);
+    const { displayGames, favoriteGames } = useSelector(state => state);
     return (
         <div className= 'game-container'>
             {displayGames.map(game => {
@@ -15,7 +15,8 @@ export const SearchHighlightContainer = () => {
                 title={game.title}
                 image={game.thumbnail}
                 url={game.url}
-                embed ={game.videos[0].embed}     
+                embed={game.videos[0].embed} 
+                isFavorited = {favoriteGames.includes(game)}      
             />
             )
         })}

@@ -31,10 +31,10 @@ const HighlightCard = ({title, embed, path, isFavorited}) => {
             <article className='game-card'>
                 <h1 className='title-font'>{title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: `${embed}` }} /> 
-                {path !== '/yourfavorites' && !isFavorited && (
+                {!isFavorited && (
                     <button className='share-button' id={title} onClick={event => pickFavoriteVideos(event.target.id)}>Add Favorite</button>
                 )}
-                {path === '/yourfavorites'||isFavorited && (
+                {isFavorited && (
                     <button className='share-button' id={title} onClick={event => removeFavoriteVideos(event.target.id)}>Remove Favorite</button>
                 )}
             </article>
