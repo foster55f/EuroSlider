@@ -8,15 +8,17 @@ import './HighlightCard.css';
 
 
 
-const HighlightCard = ({title, embed, path}) => {
+const HighlightCard = ({title, embed, path, isFavorited}) => {
     const games = useSelector(state => state.games);
     const dispatch = useDispatch();
 
     const pickFavoriteVideos = (id) => {
-        const favorite = games.find(game => {
-            return game.title === id
-        })
-        dispatch(addFavoriteGames(favorite))
+        if (!isFavorited) {
+            const favorite = games.find(game => {
+                return game.title === id
+            })
+            dispatch(addFavoriteGames(favorite))
+        }
     }
 
     const removeFavoriteVideos = (id) => {
@@ -29,10 +31,10 @@ const HighlightCard = ({title, embed, path}) => {
             <article className='game-card'>
                 <h1 className='title-font'>{title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: `${embed}` }} /> 
-                {path !== '/yourfavorites' && (
+                {path !== '/yourfavorites' && !isFavorited && (
                     <button className='share-button' id={title} onClick={event => pickFavoriteVideos(event.target.id)}>Add Favorite</button>
                 )}
-                {path === '/yourfavorites' && (
+                {path === '/yourfavorites'||isFavorited && (
                     <button className='share-button' id={title} onClick={event => removeFavoriteVideos(event.target.id)}>Remove Favorite</button>
                 )}
             </article>
