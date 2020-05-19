@@ -15,7 +15,8 @@ const Login = (props) => {
         return (
             <div className='header-background'>
                 <nav>
-                <h2 className='header-title'>Euro Slider</h2>
+                    <h2 className='header-title'>Euro Slider</h2>
+                    {/* <h1>The Ultimate Soccer Highlight Site</h1> */}
                         <div className='header-favorite'>
                             <button className='favorite-button' onClick={goToFavorites}>View {favoriteGames.length} favorited Highlights!</button>
                         </div>
