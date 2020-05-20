@@ -51,9 +51,7 @@ const HighlightCard = ({title, embed, path, isFavorited}) => {
 export default HighlightCard
 
 HighlightCard.propTypes = {
-    user: PropTypes.object.isRequired,
     addFavoriteGames: PropTypes.func,
-    addUserFavoriteGames: PropTypes.func,
     removeGames: PropTypes.func,
     removeUserGames: PropTypes.func
 }

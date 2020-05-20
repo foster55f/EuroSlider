@@ -1,8 +1,6 @@
 import React from 'react'
 import HighlightCard from '../HighlightCard/HighlightCard';
-import PropTypes from 'prop-types';
 import { useSelector} from 'react-redux';
-
 
 
 export const HighLightContainer = () => {
@@ -25,14 +23,7 @@ export const HighLightContainer = () => {
         </div>
     )
 }
-export const mapStateToProps = state => ({
-    games: state.games,
-    displayGames: state.displayGames
-  })
+
   
 export default HighLightContainer
 
-HighLightContainer.propTypes = {
-    games: PropTypes.array.isRequired,
-    displayGames: PropTypes.array.isRequired,
-}
