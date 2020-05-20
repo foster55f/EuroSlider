@@ -170,6 +170,14 @@ nav {
     display: block;
     text-align: center;
   }
+
+  .searchButton{
+    display: block;
+    margin: 0.8em auto;
+    width: 22%;
+    height: 38px;
+    font-size: larger;
+  }
 }
 
 @keyframes App-logo-spin {
