@@ -7,10 +7,10 @@ export const SearchHighlightContainer = () => {
     const { displayGames, favoriteGames } = useSelector(state => state);
     return (
         <div className= 'game-container'>
-            {displayGames.map(game => {
+            {displayGames.map((game,i) => {
             return (
                 <HighlightCard
-                key={game.competition.id}
+                key={i}
                 id={game.competition.id} 
                 title={game.title}
                 image={game.thumbnail}
