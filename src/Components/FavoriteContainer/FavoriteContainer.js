@@ -28,6 +28,3 @@ const FavoriteContainer = ({ path }) => {
 
 export default FavoriteContainer
 
-FavoriteContainer.propTypes = {
-    favoriteGames: PropTypes.array.isRequired,
-}
