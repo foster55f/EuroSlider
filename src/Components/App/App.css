@@ -168,6 +168,7 @@ nav {
     margin-right: auto;
     width: 90%;
     text-align: center;
+    transition: width 2s;
   }
 
   .searchContainer{
