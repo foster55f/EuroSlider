@@ -11,6 +11,14 @@ body{
   pointer-events: none;
 }
 
+/* .soccer-ball{
+  background-image: url('/images/football.jpg');
+} */
+
+body {
+  background-color: #bdbdbdad;
+}
+
 .game-card{
   color: black;
   background-color: black;
@@ -73,7 +81,7 @@ nav {
 
 .game-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   margin-left: auto;
   margin-right: auto;
   width: 90%;
@@ -150,6 +158,30 @@ nav {
 
 .user-entry {
   display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  .game-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    text-align: center;
+  }
+
+  .searchContainer{
+    display: block;
+    text-align: center;
+  }
+
+  .searchButton{
+    display: block;
+    margin: 0.8em auto;
+    width: 22%;
+    height: 38px;
+    font-size: larger;
+  }
 }
 
 @keyframes App-logo-spin {
