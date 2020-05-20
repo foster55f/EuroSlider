@@ -41,7 +41,7 @@ const HighlightCard = ({title, embed, path, isFavorited}) => {
                     color2={'#ffd700'} />
                 )}
                 {isFavorited && (
-                    <button className='share-button' id={title} onClick={event => removeFavoriteVideos(event.target.id)}>Remove Favorite</button>
+                    <button className='share-button' id={title} onClick={event => removeFavoriteVideos(event.target.id)}>Remove from Favorites</button>
                 )}
             </article>
         )
