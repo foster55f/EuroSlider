@@ -1,6 +1,6 @@
 # Euro Slider
 
-* by  [Foster Taylor](https://github.com/foster55f)
+by  [Foster Taylor](https://github.com/foster55f)
 
 ## Production Site
 [Euro Slider](https://morning-headland-35296.herokuapp.com/)
